@@ -7,5 +7,5 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>code-puzzle</artifactId>
-	<name>Code Puzzle</name>
+	<name>Code Puzzle Library</name>
 </project>

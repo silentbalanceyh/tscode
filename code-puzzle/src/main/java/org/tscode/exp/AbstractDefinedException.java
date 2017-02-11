@@ -6,7 +6,7 @@ package org.tscode.exp;
  * @author Lang
  *
  */
-public abstract class AbstractShapeException extends AbstractException {
+public abstract class AbstractDefinedException extends AbstractException {
 	// ~ Static Fields =======================================
 	/**
 	 * 
@@ -26,7 +26,7 @@ public abstract class AbstractShapeException extends AbstractException {
 	 * @param errorCode
 	 * @param args
 	 */
-	public AbstractShapeException(final Class<?> clazz, final int errorCode, final Object... args) {
+	public AbstractDefinedException(final Class<?> clazz, final int errorCode, final Object... args) {
 		super(ERROR.getError(clazz, errorCode, args));
 		this.errorCode = errorCode;
 	}

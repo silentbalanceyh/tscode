@@ -8,6 +8,8 @@
 	<name>Code Repository</name>
 	<modules>
 		<module>code-puzzle</module>
+		<module>code-api</module>
+		<module>code-shape</module>
 	</modules>
 	<properties>
 		<!-- Default Encoding -->
