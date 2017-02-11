@@ -2,6 +2,7 @@ package org.tscode.util;
 
 import java.text.MessageFormat;
 
+import org.tscode.cv.Constants;
 import org.tscode.cv.MsgLog;
 import org.tscode.exp.AbstractException;
 
@@ -113,7 +114,7 @@ public final class Logger {
 	private static String format(final String pattern, final Object... args) {
 		// Default without any arguments input
 		String message = pattern;
-		if (0 < args.length) {
+		if (Constants.ZERO < args.length) {
 			try {
 				message = MessageFormat.format(pattern, args);
 			} catch (final Exception ex) {

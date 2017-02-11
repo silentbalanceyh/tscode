@@ -59,6 +59,12 @@
 		<!-- AspectJ Tools -->
 		<!-- http://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
 		<aspectj.version>1.8.9</aspectj.version>
+		
+		<!-- ========== Vertx Version ====================== -->
+		<!-- (Sep 08, 2016) Vertx.x Core -->
+		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
+		<vertx.version>3.3.3</vertx.version>
+		
 		<!-- =========================== Plugin =========================== -->
 		<!-- Maven Clean Plugin -->
 		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin/ -->
@@ -218,6 +224,57 @@
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
+			</dependency>
+			<!-- Vert.X Core -->
+			<dependency>
+				<groupId>io.vertx</groupId>
+				<artifactId>vertx-core</artifactId>
+				<version>${vertx.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-databind</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-buffer</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-transport</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-codec-http</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-common</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-handler</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.vertx</groupId>
+				<artifactId>vertx-web</artifactId>
+				<version>${vertx.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.vertx</groupId>
+						<artifactId>vertx-auth-common</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.vertx</groupId>
+						<artifactId>vertx-core</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
