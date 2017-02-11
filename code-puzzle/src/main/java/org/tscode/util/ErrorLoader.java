@@ -48,7 +48,6 @@ public final class ErrorLoader {
 	 * @return
 	 */
 	public String getError(@NotNull final Class<?> clazz, @Max(-10000) final int errCode, final Object... args) {
-
 		final String key = 'E' + String.valueOf(Math.abs(errCode));
 
 		final StringBuilder errMsg = new StringBuilder(32);

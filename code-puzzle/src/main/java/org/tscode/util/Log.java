@@ -18,7 +18,7 @@ import net.sf.oval.guard.Guarded;
  *
  */
 @Guarded
-public final class Logger {
+public final class Log {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================
@@ -80,7 +80,7 @@ public final class Logger {
 
 	// ~ Constructors ========================================
 	/** Private constructor to prevent create instance **/
-	private Logger() {
+	private Log() {
 	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================

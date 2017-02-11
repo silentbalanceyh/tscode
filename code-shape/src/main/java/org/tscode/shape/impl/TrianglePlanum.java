@@ -21,7 +21,7 @@ import net.sf.oval.guard.Guarded;
  * Triangle manager act as container to create triangle There is no @MinSize of
  * OVal for create(...) method because the system must throw special exception
  * out.
- * 
+ * TODO: Singleton is the best
  * @author Lang
  *
  */
@@ -74,7 +74,7 @@ public class TrianglePlanum implements Planum {
 	private void verifySide(final int... sides) throws AbstractException {
 		// 1.Side Length
 		int length = sides.length;
-		if (LIMIT <= length) {
+		if (LIMIT < length) {
 			throw new InputExceedException(getClass(), "Side", NAME, length, LIMIT);
 		}
 		// 2.Side range
@@ -85,7 +85,8 @@ public class TrianglePlanum implements Planum {
 		}
 		// 3.Valid ?
 		assert LIMIT == length;
-		if ((sides[0] + sides[1] > sides[2]) && (sides[0] + sides[2] > sides[1]) && (sides[2] + sides[1] > sides[0])) {
+		final boolean valid = (sides[0] + sides[1] > sides[2]) && (sides[0] + sides[2] > sides[1]) && (sides[2] + sides[1] > sides[0]);
+		if (!valid) {
 			throw new TriangleInvalidException(getClass(), sides);
 		}
 	}

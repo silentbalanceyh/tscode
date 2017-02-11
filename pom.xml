@@ -47,6 +47,8 @@
 		<!-- Vertx.x Core -->
 		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
 		<vertx.version>3.3.3</vertx.version>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<jackson.version>2.8.5</jackson.version>
 
 		<!-- ========== SLF4j Version ====================== -->
 		<!-- SLF4j Api -->
@@ -59,12 +61,12 @@
 		<!-- AspectJ Tools -->
 		<!-- http://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
 		<aspectj.version>1.8.9</aspectj.version>
-		
+
 		<!-- ========== Vertx Version ====================== -->
 		<!-- (Sep 08, 2016) Vertx.x Core -->
 		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
 		<vertx.version>3.3.3</vertx.version>
-		
+
 		<!-- =========================== Plugin =========================== -->
 		<!-- Maven Clean Plugin -->
 		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin/ -->
@@ -110,6 +112,22 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- Logging -->
@@ -224,6 +242,32 @@
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
+			</dependency>
+			<!-- Jackson Serialization -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-annotations</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-core</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<!-- Vert.X Core -->
 			<dependency>

@@ -14,11 +14,11 @@ import io.vertx.core.json.JsonObject;
  * @author Lang
  *
  */
-public interface Calculator {
+public interface Calculator<P, L> {
 	/**
 	 * Calculator required data
 	 * 
 	 * @return
 	 */
-	<P, L> JsonObject calc(final Set<Line<L>> lines, final List<Point<P>> points);
+	JsonObject calc(final List<Point<P>> points, final Set<Line<L>> lines);
 }

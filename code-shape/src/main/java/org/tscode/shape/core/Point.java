@@ -84,7 +84,7 @@ public final class Point<T> {
 	/** **/
 	@Override
 	public String toString() {
-		final StringBuilder ret = new StringBuilder(Constants.BLD_DFT_SIZE);
+		final StringBuilder ret = new StringBuilder(Constants.DFT_BUF_SIZE);
 		ret.append(Symbol.BRACKET_ML).append("x=").append(this.xPos).append(Symbol.COMMA);
 		ret.append("y=").append(this.yPos);
 		if (Constants.INVALID != this.zPos) {

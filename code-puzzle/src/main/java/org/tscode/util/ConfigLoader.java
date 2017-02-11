@@ -1,6 +1,6 @@
 package org.tscode.util;
 
-import static org.tscode.util.Logger.jvmError;
+import static org.tscode.util.Log.jvmError;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -64,9 +64,9 @@ public class Triangle<P, L> implements Shape<P, L> {
 
 	/** **/
 	@Override
-	public void connect(@NotNull final Calculator calculator) {
+	public void connect(@NotNull final Calculator<P, L> calculator) {
 		this.data.clear();
-		this.data.mergeIn(calculator.calc(this.lines, this.points));
+		this.data.mergeIn(calculator.calc(this.points, this.lines));
 	}
 	// ~ Methods =============================================
 	// ~ Private Methods =====================================

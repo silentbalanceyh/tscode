@@ -8,4 +8,10 @@
 	</parent>
 	<artifactId>code-puzzle</artifactId>
 	<name>Code Library</name>
+	<dependencies>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-core</artifactId>
+		</dependency>
+	</dependencies>
 </project>

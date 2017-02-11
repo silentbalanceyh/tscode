@@ -39,5 +39,5 @@ public interface Shape<P, L> {
 	/**
 	 * Shape connect to calculator will refresh Data
 	 */
-	void connect(Calculator calculator);
+	void connect(Calculator<P, L> calculator);
 }

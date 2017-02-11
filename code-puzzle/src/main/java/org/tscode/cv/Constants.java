@@ -10,5 +10,7 @@ public interface Constants {
 	/** **/
 	int ZERO = 0;
 	/** **/
-	int BLD_DFT_SIZE = 16;
+	int DFT_BUF_SIZE = 16;
+	/** **/
+	String DFT_ENCODING = "UTF-8";
 }
