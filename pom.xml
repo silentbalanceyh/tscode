@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.ts</groupId>
+	<groupId>org.tscode</groupId>
 	<artifactId>code-repository</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -148,6 +148,12 @@
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
+			<!-- Code Library -->
+			<dependency>
+				<groupId>org.tscode</groupId>
+				<artifactId>code-puzzle</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
 			<!-- Test Library for each modules -->
 			<dependency>
 				<groupId>junit</groupId>

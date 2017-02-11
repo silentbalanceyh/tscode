@@ -19,6 +19,8 @@ public abstract class AbstractException extends Exception {
 	// ~ Instance Fields =====================================
 	/** **/
 	protected transient String errorMsg;
+	/** **/
+	private transient int errorCode;
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
@@ -30,15 +32,25 @@ public abstract class AbstractException extends Exception {
 		super(message);
 		this.errorMsg = message;
 	}
-
+	/**
+	 * 
+	 * @param clazz
+	 * @param errorCode
+	 * @param args
+	 */
+	public AbstractException(final Class<?> clazz, final int errorCode, final Object... args) {
+		super(ERROR.getError(clazz, errorCode, args));
+		this.errorCode = errorCode;
+	}
 	// ~ Abstract Methods ====================================
 	/**
 	 * Error code to identifier error details
 	 * 
 	 * @return
 	 */
-	public abstract int getErrorCode();
-
+	public int getErrorCode() {
+		return this.errorCode;
+	}
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
 	/**

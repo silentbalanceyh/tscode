@@ -1,44 +1,31 @@
-package org.tscode.exp;
+package org.tscode.shape.exp;
+
+import org.tscode.exp.AbstractException;
 
 /**
- * Error for Shape
  * 
  * @author Lang
  *
  */
-public abstract class AbstractDefinedException extends AbstractException {
-	// ~ Static Fields =======================================
+public class EdgesWrongException extends AbstractException {
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6111583610166930483L;
+	private static final long serialVersionUID = -4501913010452031928L;
 
+	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
-	/** **/
-	private transient final int errorCode;
-
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
-	/**
-	 * 
-	 * @param clazz
-	 * @param errorCode
-	 * @param args
-	 */
-	public AbstractDefinedException(final Class<?> clazz, final int errorCode, final Object... args) {
-		super(ERROR.getError(clazz, errorCode, args));
-		this.errorCode = errorCode;
+	/** **/
+	public EdgesWrongException(final Class<?> clazz, final int edges) {
+		super(clazz, -10001, edges);
 	}
-
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
-	/** **/
-	@Override
-	public int getErrorCode() {
-		return this.errorCode;
-	}
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================
 	// ~ hashCode,equals,toString ============================
