@@ -13,7 +13,7 @@ import org.tscode.util.Executor;
  * @author Lang
  *
  */
-public class CalcTestCase {
+public class FailureTestCase {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================

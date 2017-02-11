@@ -24,10 +24,10 @@ import net.sf.oval.constraint.NotNull;
  * @author Lang
  * 
  */
-public class SevSuccessTestCase {
+public class ServiceTestCase {
 	// ~ Static Fields =======================================
 	/** **/
-	private static Logger LOGGER = LoggerFactory.getLogger(SevSuccessTestCase.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(ServiceTestCase.class);
 	// ~ Instance Fields =====================================
 	/** Singleton is the best **/
 	private transient TriangleService service = new TriangleSevImpl();
