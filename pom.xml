@@ -1,0 +1,328 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.ts</groupId>
+	<artifactId>code-repository</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Code Repository</name>
+	<modules>
+		<module>code-puzzle</module>
+	</modules>
+	<properties>
+		<!-- Default Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- Each Module Specification -->
+		<module.name>${project.groupId}-${project.artifactId}-${project.version}</module.name>
+		<mods.directory>target/mods</mods.directory>
+		<!-- JDK/AJC Compiler Version -->
+		<jdk.version>1.8</jdk.version>
+		<ajc.version>1.8</ajc.version>
+
+		<!-- JUnit Version -->
+		<junit.version>4.12</junit.version>
+
+		<!-- AspectJ File Properties -->
+		<aspectj.compile.file>aopaj.properties</aspectj.compile.file>
+		<aspectj.test.file>aopaj-test.properties</aspectj.test.file>
+		<!-- AOP Alliance -->
+		<!-- http://mvnrepository.com/artifact/aopalliance/aopalliance -->
+		<aopalliance.version>1.0</aopalliance.version>
+		<!-- AspectJ Tools -->
+		<!-- http://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
+		<aspectj.version>1.8.9</aspectj.version>
+
+		<!-- ========== Object Validation ================== -->
+		<!-- Oval -->
+		<!-- http://mvnrepository.com/artifact/net.sf.oval/oval -->
+		<oval.version>1.86</oval.version>
+		<!-- Support Groovy in Oval -->
+		<!-- http://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
+		<oval.groovy>2.4.7</oval.groovy>
+
+		<!-- ========== Vertx Version ====================== -->
+		<!-- Vertx.x Core -->
+		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
+		<vertx.version>3.3.3</vertx.version>
+
+		<!-- ========== SLF4j Version ====================== -->
+		<!-- SLF4j Api -->
+		<!-- http://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<slf4j.version>1.7.21</slf4j.version>
+		<!-- LOG4j -->
+		<!-- http://mvnrepository.com/artifact/log4j/log4j -->
+		<log4j.version>1.2.17</log4j.version>
+
+		<!-- AspectJ Tools -->
+		<!-- http://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
+		<aspectj.version>1.8.9</aspectj.version>
+		<!-- =========================== Plugin =========================== -->
+		<!-- Maven Clean Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin/ -->
+		<maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
+
+		<!-- Apache Maven Compiler Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+		<maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
+
+		<!-- Apache Maven Resources Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+		<maven.resources.plugin.version>2.7</maven.resources.plugin.version>
+
+		<!-- Apache Maven Dependency Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+		<maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
+
+		<!-- Maven Surefire Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin/ -->
+		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+
+		<!-- Mojo's AspectJ Maven Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.codehaus.mojo/aspectj-maven-plugin -->
+		<maven.mojo.aspectj.version>1.9</maven.mojo.aspectj.version>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/appassembler-maven-plugin -->
+		<maven.mojo.appassembler.version>2.0.0</maven.mojo.appassembler.version>
+		<!-- Apache Maven Shade Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+		<maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
+
+		<!-- OSGI Bundle Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.felix/maven-bundle-plugin -->
+		<maven.bundle.plugin.version>3.0.1</maven.bundle.plugin.version>
+
+		<!-- Jar Plugin -->
+		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<!-- Object Validation -->
+		<dependency>
+			<groupId>net.sf.oval</groupId>
+			<artifactId>oval</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+		</dependency>
+		<!-- AspectJ Runtime -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Test Library for each modules -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- Object Validation -->
+			<dependency>
+				<groupId>net.sf.oval</groupId>
+				<artifactId>oval</artifactId>
+				<version>${oval.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>${oval.groovy}</version>
+			</dependency>
+			<!-- AspectJ Runtime -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjtools</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>aopalliance</groupId>
+				<artifactId>aopalliance</artifactId>
+				<version>${aopalliance.version}</version>
+			</dependency>
+			<!-- Slf4j Version -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<!-- AJDT Compile -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>${maven.mojo.aspectj.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjrt</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<complianceLevel>${ajc.version}</complianceLevel>
+					<source>${ajc.version}</source>
+					<target>${ajc.version}</target>
+					<!-- Begin -->
+					<!-- Ignore warning message for : Xlint:typeNotExposedToWeaver -->
+					<Xlint>ignore</Xlint>
+					<weaveWithAspectsInMainSourceFolder>true</weaveWithAspectsInMainSourceFolder>
+				</configuration>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<configuration>
+							<ajdtBuildDefFile>src/main/resources/aop/${aspectj.compile.file}</ajdtBuildDefFile>
+						</configuration>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>test-compile</id>
+						<configuration>
+							<ajdtBuildDefFile>src/main/resources/aop/${aspectj.test.file}</ajdtBuildDefFile>
+						</configuration>
+						<goals>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven.clean.plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar.plugin.version}</version>
+			</plugin>
+			<!-- Other plugins required by the build -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven.resources.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>copy-mod-to-target</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<overwrite>true</overwrite>
+							<outputDirectory>${mods.directory}/${module.name}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>target/classes</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Maven Dependency Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${maven.dependency.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>copy-mod-dependencies-to-target</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${mods.directory}/${module.name}/lib</outputDirectory>
+							<includeScope>runtime</includeScope>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-mod-dependencies-to-target-dependencies</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/dependencies</outputDirectory>
+							<includeScope>runtime</includeScope>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
