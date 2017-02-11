@@ -1,46 +1,32 @@
-package org.tscode.shape.core;
+package org.tscode.shape.exp;
 
-import org.tscode.cv.Constants;
-
-import net.sf.oval.constraint.NotNull;
-import net.sf.oval.guard.Guarded;
-
+import org.tscode.exp.AbstractException;
 /**
  * 
  * @author Lang
  *
  */
-@Guarded
-public class Line<L> {
+public class TriangleInvalidException extends AbstractException{
 	// ~ Static Fields =======================================
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3745001699013542159L;
 	// ~ Instance Fields =====================================
-	/** **/
-	protected double distance = Constants.ZERO;
-	/** Store data into this line to extend **/
-	private L dataRef;
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
-	/** **/
-	public Line(final double distance){
-		this.distance = distance;
+	/**
+	 * 
+	 * @param clazz
+	 * @param sides
+	 */
+	public TriangleInvalidException(final Class<?> clazz, final int... sides){
+		super(clazz, -10003, sides);
 	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
-	/** **/
-	public double getLength() {
-		return this.distance;
-	}
-
-	/** **/
-	public void setData(@NotNull final L dataRef) {
-		this.dataRef = dataRef;
-	}
-	/** **/
-	public L getData() {
-		return this.dataRef;
-	}
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================
 	// ~ hashCode,equals,toString ============================

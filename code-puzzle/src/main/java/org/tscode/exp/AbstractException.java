@@ -4,7 +4,6 @@ import org.tscode.util.ErrorLoader;
 
 /**
  * Defined base checked exception
- * 
  * @author Lang
  *
  */

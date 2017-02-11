@@ -1,15 +1,31 @@
-package org.tscode.shape.triangle;
+package org.tscode.shape.exp;
+
+import org.tscode.exp.AbstractException;
+
 /**
- * Triangle manager act as container to create triangle
+ * 
  * @author Lang
  *
  */
-public class TrianglePlanum {
+public final class SideNonPositiveException extends AbstractException{
 	// ~ Static Fields =======================================
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4515651327316297985L;
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
+	/**
+	 * 
+	 * @param clazz
+	 * @param shapeName
+	 * @param current
+	 */
+	public SideNonPositiveException(final Class<?> clazz, final String shapeName, final int current){
+		super(clazz, -10002, shapeName, current);
+	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================

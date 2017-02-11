@@ -1,5 +1,6 @@
 package org.tscode.shape;
 
+import java.util.List;
 import java.util.Set;
 
 import org.tscode.shape.core.Line;
@@ -15,23 +16,18 @@ import io.vertx.core.json.JsonObject;
  */
 public interface Shape<P, L> {
 	/**
-	 * Check whether Shape is valid
+	 * Get all Points, provide sequence of points to build vectors.
 	 * 
 	 * @return
 	 */
-	boolean valid();
-	/**
-	 * Get all Points
-	 * 
-	 * @return
-	 */
-	Set<Point<P>> getPoints();
+	List<Point<P>> getPoints();
+
 	/**
 	 * Get all Lines
 	 * 
 	 * @return
 	 */
-	Set<Line<P, L>> getLines();
+	Set<Line<L>> getLines();
 
 	/**
 	 * Get shape data
@@ -39,4 +35,9 @@ public interface Shape<P, L> {
 	 * @return
 	 */
 	JsonObject getData();
+
+	/**
+	 * Shape connect to calculator will refresh Data
+	 */
+	void connect(Calculator calculator);
 }

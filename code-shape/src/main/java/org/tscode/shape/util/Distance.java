@@ -1,6 +1,6 @@
-package org.tscode.shape.core;
+package org.tscode.shape.util;
 
-import org.tscode.cv.Constants;
+import org.tscode.shape.core.Point;
 
 import net.sf.oval.constraint.NotNull;
 import net.sf.oval.guard.Guarded;
@@ -11,36 +11,39 @@ import net.sf.oval.guard.Guarded;
  *
  */
 @Guarded
-public class Line<L> {
+public final class Distance {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
-	/** **/
-	protected double distance = Constants.ZERO;
-	/** Store data into this line to extend **/
-	private L dataRef;
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
+	/**
+	 * 
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public static <T> double calculate(@NotNull final Point<T> start, @NotNull final Point<T> end) {
+		/** 1.Calculate (x1 - x2)2 + (y1 - y2)2 **/
+		final double x2 = Math.pow((start.getX() - end.getX()), 2);
+		final double y2 = Math.pow((start.getY() - end.getY()), 2);
+		/** 2.Check Z **/
+		double sum = x2 + y2;
+		if (Double.NaN != start.getZ() && Double.NaN != end.getZ()) {
+			/** + (z1 - z2)2 **/
+			final double z2 = Math.pow((start.getZ() - end.getZ()), 2);
+			sum += z2;
+		}
+		assert 0 <= sum;
+		/** 3.Set distance **/
+		return Math.sqrt(sum);
+	}
+
 	// ~ Constructors ========================================
-	/** **/
-	public Line(final double distance){
-		this.distance = distance;
+	private Distance() {
 	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
-	/** **/
-	public double getLength() {
-		return this.distance;
-	}
-
-	/** **/
-	public void setData(@NotNull final L dataRef) {
-		this.dataRef = dataRef;
-	}
-	/** **/
-	public L getData() {
-		return this.dataRef;
-	}
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================
 	// ~ hashCode,equals,toString ============================

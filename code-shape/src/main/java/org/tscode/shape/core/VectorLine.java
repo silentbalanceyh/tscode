@@ -1,30 +1,50 @@
-package org.tscode.shape.exp;
+package org.tscode.shape.core;
 
-import org.tscode.exp.AbstractException;
+import org.tscode.shape.util.Distance;
+
+import net.sf.oval.constraint.NotNull;
+import net.sf.oval.guard.Guarded;
 
 /**
  * 
  * @author Lang
  *
  */
-public class SidesWrongException extends AbstractException {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -4501913010452031928L;
-
+@Guarded
+public final class VectorLine<T, L> extends Line<L> {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
+	/** **/
+	private Point<T> start;
+	/** **/
+	private Point<T> end;
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
-	/** **/
-	public SidesWrongException(final Class<?> clazz, final int edges) {
-		super(clazz, -10001, edges);
+	/**
+	 * 
+	 * @param start
+	 * @param end
+	 */
+	public VectorLine(@NotNull final Point<T> start, @NotNull final Point<T> end) {
+		super(Double.NaN);
+		this.start = start;
+		this.end = end;
+		// Calculate distance
+		this.distance = Distance.calculate(this.start, this.end);
 	}
+
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
+	/** **/
+	public Point<T> getStart() {
+		return this.start;
+	}
+
+	/** **/
+	public Point<T> getEnd() {
+		return this.end;
+	}
 	// ~ Methods =============================================
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================

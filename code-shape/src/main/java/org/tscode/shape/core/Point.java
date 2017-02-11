@@ -17,24 +17,17 @@ public final class Point<T> {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
 	/** X Pos **/
-	private double xPos = Constants.ZERO;
+	private double xPos = Double.NaN;
 	/** Y Pos **/
-	private double yPos = Constants.ZERO;
+	private double yPos = Double.NaN;
 	/** Z Pos: Resevered **/
-	private double zPos = Constants.ZERO;
+	private double zPos = Double.NaN;
 	/** Store data into this point to extend **/
 	private T dataRef;
 
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
-	/** Origin **/
-	public Point() {
-		this.xPos = Constants.ZERO;
-		this.yPos = Constants.ZERO;
-		this.zPos = Constants.ZERO;
-	}
-
 	/** **/
 	public Point(final double xPos, final double yPos) {
 		this.setLocation(xPos, yPos);
@@ -44,6 +37,7 @@ public final class Point<T> {
 	public Point(final double xPos, final double yPos, final double zPos) {
 		this.setLocation(xPos, yPos, zPos);
 	}
+
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
@@ -51,12 +45,14 @@ public final class Point<T> {
 	public void setLocation(final double xPos, final double yPos) {
 		this.setLocation(xPos, yPos, Constants.ZERO);
 	}
+
 	/** **/
 	public void setLocation(final double xPos, final double yPos, final double zPos) {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.zPos = zPos;
 	}
+
 	/** **/
 	public T getData() {
 		return dataRef;
