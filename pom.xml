@@ -97,9 +97,25 @@
 		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
 	</properties>
 	<dependencies>
+		<!-- ==================== Shared For each module ================== -->
+		<!-- JUnit for testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
 		</dependency>
 		<!-- Object Validation -->
 		<dependency>
