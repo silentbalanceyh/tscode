@@ -8,10 +8,34 @@
 	</parent>
 	<artifactId>code-api</artifactId>
 	<name>Code Restful Api</name>
+	<packaging>war</packaging>
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.tscode</groupId>
 			<artifactId>code-puzzle</artifactId>
 		</dependency>
 	</dependencies>
+	<build>
+		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+		<plugins>
+			<plugin>                      
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.maven.plugin}</version>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>${appengine.maven.plugin}</version>
+				<configuration>
+
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>
