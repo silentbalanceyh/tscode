@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -9,7 +10,6 @@
 	<modules>
 		<module>code-puzzle</module>
 		<module>code-shape</module>
-		<module>code-api</module>
 	</modules>
 	<properties>
 		<!-- Default Encoding -->
@@ -22,9 +22,6 @@
 		<jdk.version>1.8</jdk.version>
 		<ajc.version>1.8</ajc.version>
 
-		<!-- Jetty For Google App Engine -->
-		<jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
-		<appengine.maven.plugin>1.0.0</appengine.maven.plugin>
 		<!-- JUnit Version -->
 		<junit.version>4.12</junit.version>
 
@@ -44,26 +41,26 @@
 		<oval.version>1.86</oval.version>
 		<!-- Support Groovy in Oval -->
 		<!-- http://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
-		<oval.groovy>2.4.7</oval.groovy>
+		<oval.groovy>2.4.8</oval.groovy>
 
 		<!-- ========== Vertx Version ====================== -->
 		<!-- Vertx.x Core -->
 		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
 		<vertx.version>3.3.3</vertx.version>
 		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-		<jackson.version>2.8.5</jackson.version>
+		<jackson.version>2.8.6</jackson.version>
 
 		<!-- ========== SLF4j Version ====================== -->
 		<!-- SLF4j Api -->
 		<!-- http://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-		<slf4j.version>1.7.21</slf4j.version>
+		<slf4j.version>1.7.22</slf4j.version>
 		<!-- LOG4j -->
 		<!-- http://mvnrepository.com/artifact/log4j/log4j -->
 		<log4j.version>1.2.17</log4j.version>
 
 		<!-- AspectJ Tools -->
 		<!-- http://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
-		<aspectj.version>1.8.9</aspectj.version>
+		<aspectj.version>1.8.10</aspectj.version>
 
 		<!-- ========== Vertx Version ====================== -->
 		<!-- (Sep 08, 2016) Vertx.x Core -->
@@ -108,7 +105,23 @@
 		<!-- Jar Plugin -->
 		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
 		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+		
+		<!-- Maven Updating -->
+		<maven.mojo.versions>2.3</maven.mojo.versions>
 	</properties>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>snapshots-repo</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<layout>default</layout>
+		</pluginRepository>
+	</pluginRepositories>
 	<prerequisites>
 		<!-- Minimum maven version -->
 		<maven>3.3.9</maven>
@@ -331,6 +344,21 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
+			<!-- Mojo -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>${maven.mojo.versions}</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>display-dependency-updates</goal>
+							<goal>display-plugin-updates</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- AJDT Compile -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -504,7 +532,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>

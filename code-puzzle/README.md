@@ -11,7 +11,6 @@ This program is built with three modules
 * **code-repository**：Parent project to provide uniform version of java dependency library
 * **code-puzzle**：The core library that shared between each module that provide some utility tool/abstract class/interface
 * **code-shape**：Tringle challenge small system
-* **code-api**：This project is reserved to provide Restful Api for future using
 
 ### 1.Basic Library.
 
