@@ -1,4 +1,4 @@
-package org.tscode.shape.exp;
+package org.tscode.exp.shape;
 
 import org.tscode.exp.AbstractException;
 

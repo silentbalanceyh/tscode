@@ -6,13 +6,13 @@ import java.util.Set;
 
 import org.tscode.cv.Constants;
 import org.tscode.exp.AbstractException;
+import org.tscode.exp.shape.InputExceedException;
+import org.tscode.exp.shape.SideNonPositiveException;
+import org.tscode.exp.shape.TriangleInvalidException;
 import org.tscode.shape.Planum;
 import org.tscode.shape.Shape;
 import org.tscode.shape.core.Line;
 import org.tscode.shape.core.Point;
-import org.tscode.shape.exp.InputExceedException;
-import org.tscode.shape.exp.SideNonPositiveException;
-import org.tscode.shape.exp.TriangleInvalidException;
 
 import net.sf.oval.constraint.NotNull;
 import net.sf.oval.guard.Guarded;

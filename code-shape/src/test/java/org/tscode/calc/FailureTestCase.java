@@ -3,9 +3,9 @@ package org.tscode.calc;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.tscode.shape.exp.InputExceedException;
-import org.tscode.shape.exp.SideNonPositiveException;
-import org.tscode.shape.exp.TriangleInvalidException;
+import org.tscode.exp.shape.InputExceedException;
+import org.tscode.exp.shape.SideNonPositiveException;
+import org.tscode.exp.shape.TriangleInvalidException;
 import org.tscode.util.Executor;
 
 /**

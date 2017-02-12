@@ -1,18 +1,17 @@
-package org.tscode.shape.exp;
+package org.tscode.exp.shape;
 
 import org.tscode.exp.AbstractException;
-
 /**
  * 
  * @author Lang
  *
  */
-public final class SideNonPositiveException extends AbstractException{
+public class TriangleInvalidException extends AbstractException{
 	// ~ Static Fields =======================================
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4515651327316297985L;
+	private static final long serialVersionUID = -3745001699013542159L;
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
@@ -20,11 +19,10 @@ public final class SideNonPositiveException extends AbstractException{
 	/**
 	 * 
 	 * @param clazz
-	 * @param shapeName
-	 * @param current
+	 * @param sides
 	 */
-	public SideNonPositiveException(final Class<?> clazz, final String shapeName, final int current){
-		super(clazz, -10002, shapeName, current);
+	public TriangleInvalidException(final Class<?> clazz, final int... sides){
+		super(clazz, -10003, sides);
 	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
