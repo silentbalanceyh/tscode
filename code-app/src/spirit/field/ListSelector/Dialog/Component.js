@@ -27,7 +27,7 @@ class Component extends React.Component {
 
   render() {
     /** 列配置信息 **/
-    const {columns = [], search = {}, pagination = {}, ingest, dispatch, form } = this.props
+    const {columns = [], search = {}, pagination = {}, ingest, dispatch, form} = this.props
     const {data = [], loaded} = this.state
     const state = this.state
     state.pagination = pagination
@@ -50,9 +50,10 @@ class Component extends React.Component {
         </div>
         <div className={`ui bottom attached menu ${css['bottom']} ${css['item']}`}>
           <div className={`actions ${css['actions']}`}>
-            <div id='btnYes' className="ui ok blue button" onClick={selectors.$_fnSelect(data,columns,ingest['linker'],{
-              dispatch, form
-            })}>
+            <div id='btnYes' className="ui ok blue button"
+                 onClick={selectors.$_fnSelect(data, columns, ingest['linker'], {
+                   dispatch, form
+                 })}>
               <i className="checkmark icon"></i>
               选择
             </div>

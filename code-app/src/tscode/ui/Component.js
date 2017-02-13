@@ -6,17 +6,20 @@ import {
 } from 'react-google-maps'
 import css from './Component.scss'
 
-const DefinedMap = withGoogleMap(props => (
-  <GoogleMap
-    defaultZoom={14}
-    defaultCenter={{lat: 37.7, lng: -122.4}}
-    onClick={props.onMapClick}
-  >
-    {props.markers.map((marker, index) => (
-      <Marker {...marker}/>
-    ))}
-  </GoogleMap>
-));
+const DefinedMap = withGoogleMap(props => {
+
+  return (
+    <GoogleMap
+      defaultZoom={14}
+      defaultCenter={{lat: 37.7, lng: -122.4}}
+      onClick={props.onMapClick}
+    >
+      {props.markers.map((marker, index) => (
+        <Marker {...marker} onClick={props.onMarker(marker)}/>
+      ))}
+    </GoogleMap>
+  )
+});
 class Component extends React.Component {
 
   componentWillMount() {
@@ -40,7 +43,7 @@ class Component extends React.Component {
     // Types
     const types = $_fnType(data)
     const tpKeys = Object.keys(types)
-    const {$_fnMapClick} = this.props
+    const {$_fnMapClick, $_fnMarker} = this.props
     return (
       <main className="ui segment two column grid">
         <div className="row">
@@ -67,15 +70,12 @@ class Component extends React.Component {
                 })
               }
             </div>
-            <div className="ui header">Foods</div>
-            <div className="ui list">
-
-            </div>
           </div>
           <div className={`column ${css['right']}`} style={{height: `600px`}}>
             <DefinedMap
               markers={markers}
               onMapClick={$_fnMapClick(this.props)}
+              onMarker={$_fnMarker(this.props)}
               containerElement={
                 <div style={{height: `100%`}}/>
               }

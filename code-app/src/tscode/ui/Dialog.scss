@@ -1,0 +1,39 @@
+.top {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top: 0 !important;
+  padding-bottom: 0.3em !important;
+  padding-top: 0.3em !important;
+}
+
+.bottom {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom: none !important;
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
+
+.item{
+  border-left:0em!important;
+  border-right:0em!important;
+}
+.search{
+  margin-left:0.5em!important;
+}
+.header{
+  background-color: #4682B4!important;
+  color: white!important;
+}
+.header th{
+  background-color: #4682B4!important;
+  color: white!important;
+  font-size: 13px!important;
+}
+.pagelist{
+  padding: 0.5em!important;
+}
+.actions{
+  text-align: center!important;
+  width: 100%!important;
+}
