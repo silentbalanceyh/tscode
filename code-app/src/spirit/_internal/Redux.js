@@ -23,7 +23,7 @@ const single = (Component, keys, dispatches, attr = "current") => {
   /** Dispatch -> Props **/
   const mapDispatchToProps = (dispatch) => {
     let props = {dispatch};
-    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,dispatches);
+    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,Remote);
     return props;
   }
   return connect(mapStateToProps, mapDispatchToProps)(Component)
@@ -35,7 +35,7 @@ const direct = (Component, dispatches, mapping) => {
   /** Dispatch -> Props **/
   const mapDispatchToProps = (dispatch) => {
     let props = {dispatch};
-    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,dispatches);
+    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,Remote);
     return props;
   }
   return connect(mapStateToProps, mapDispatchToProps)(Component)
@@ -76,7 +76,7 @@ const multi = (Component, dispatches, mapping = {}) => {
   /** Dispatch -> Props **/
   const mapDispatchToProps = (dispatch) => {
     let props = {dispatch};
-    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,dispatches);
+    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,Remote);
     return props;
   }
   return connect(mapStateToProps, mapDispatchToProps)(Component)
@@ -88,7 +88,7 @@ const dispatch = (Component, dispatches) => {
   /** Dispatch -> Props **/
   const mapDispatchToProps = (dispatch) => {
     let props = {dispatch};
-    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,dispatches);
+    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,Remote);
     return props;
   }
   return connect(mapStateToProps, mapDispatchToProps)(Component)
@@ -118,7 +118,7 @@ const redux = (Component, dispatches) => {
   /** Dispatch -> Props **/
   const mapDispatchToProps = (dispatch) => {
     let props = {dispatch};
-    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,dispatches);
+    props = $$.Entity.Data.merge(props, dispatches); // Object.assign(props,Remote);
     return props;
   }
   return connect(mapStateToProps, mapDispatchToProps)(Component)

@@ -5,21 +5,20 @@ import {
   Marker
 } from 'react-google-maps'
 
-import Util from './Util'
-import fnInit from './Initor'
-import dispatches from './Redux'
+import Event from './Api/Event'
+import Future from './Api/Future'
+import Remote from './Api/Remote'
 import mapping from '../spirit/_internal/Redux'
 
 const DefinedMap = withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapLoad}
     defaultZoom={14}
-    defaultCenter={fnInit.$_fnLocation()}
+    defaultCenter={Future.$_fnLocation()}
     onClick={props.onMapClick}
   >
     {props.markers.map((marker, index) => (
-      <Marker key={index}
-        {...marker}
+      <Marker {...marker}
         onRightClick={() => props.onMarkerRightClick(index)}
       />
     ))}
@@ -29,15 +28,13 @@ class Component extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = fnInit.$_fnState();
+    this.state = Future.$_fnState();
   }
   componentWillMount(){
-    dispatches.$_fnInit(this.props)
+    Remote.$_fnInit(this)
   }
   render() {
-    console.info(this.state);
-    const {markers = fnInit.$_fnMarker()} = this.props
-
+    const {markers = []} = this.state
     return (
       <div className="ui container">
         <div className="ui top attached ui segment">
@@ -45,7 +42,7 @@ class Component extends React.Component {
         <div className="ui attached segment" style={{height: `600px`}}>
           <DefinedMap
             markers={markers}
-            onMapClick={Util.onMapClick(this)}
+            onMapClick={Event.onMapClick(this)}
             containerElement={
               <div style={{height: `100%`}}/>
             }
@@ -59,6 +56,6 @@ class Component extends React.Component {
   }
 }
 
-export default mapping.direct(Component,dispatches,{
+export default mapping.direct(Component,Remote,{
 
 })

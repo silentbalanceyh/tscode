@@ -40,5 +40,5 @@ class Component extends PureForm {
 if(process.env.NODE_ENV === `development`) {
 
 }
-//export default reduxForm({})(mapping.redux(Component,dispatches));
+//export default reduxForm({})(mapping.redux(Component,Remote));
 export default mapping.redux(reduxForm({})(Component),dispatches);

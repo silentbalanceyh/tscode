@@ -102,5 +102,5 @@ if (process.env.NODE_ENV === `development`) {
     $_etat: React.PropTypes.oneOf(['COMMON', 'EDIT', 'ADD', 'VIEW'])
   }
 }
-// export default mapping.redux(reduxForm({})(Component),dispatches)
+// export default mapping.redux(reduxForm({})(Component),Remote)
 export default reduxForm({})(mapping.redux(Component, dispatches));
