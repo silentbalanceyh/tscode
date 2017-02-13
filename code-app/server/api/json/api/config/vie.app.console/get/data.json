@@ -1,0 +1,24 @@
+{
+  "data": {
+    "owner": "Lang Yu",
+    "backup": "console/bak",
+    "dateFormat": "yyyy-MM-dd HH:mm",
+    "auth": "BASIC",
+    "encoding": "UTF-8",
+    "title": "Engine Console",
+    "version": "0.9.1",
+    "attachSize": "4096",
+    "emailServer": "0",
+    "path": "console",
+    "contact": "lang.yu@hpe.com",
+    "name": "vie.app.console",
+    "currency": "RMB",
+    "category": "WEB",
+    "uniqueId": "1",
+    "email": "false"
+  },
+  "status": {
+    "message": "OK",
+    "code": 200
+  }
+}

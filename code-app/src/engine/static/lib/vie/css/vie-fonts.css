@@ -1,0 +1,61 @@
+/**
+ * HTML当前页面默认字体：small = 12px
+ **/
+html > *, .item, .header, .statistic, .value, .label {
+  font-family: Lato,"Microsoft Yahei"!important;
+}
+.item{
+  font-size: 13px !important;
+}
+html, html > * {
+  font-size: 13px !important;
+}
+
+/**
+ * HTML当前input控件默认字体大小：small
+ **/
+input, textarea, select {
+  font-size: 13px !important;
+}
+
+/**
+ * 修正Semantic UI中label默认字体大小：small，
+ * 1) <label>标签
+ * 2) class = label
+ **/
+html label, .label {
+  font-size: 13px !important;
+}
+html h1,h2,h3,h4,h5,h6{
+  font-family: SimHei!important;
+}
+html thead th{
+  font-size: 1.15em!important;
+  font-family: SimHei!important;
+}
+/**
+ * 针对header单独设置，主要针对h1,h2,h3,h4,h5,h6
+ **/
+html h1 {
+  font-size: xx-large !important;
+}
+
+html h2 {
+  font-size: x-large !important;
+}
+
+html h3 {
+  font-size: large !important;
+}
+
+html h4 {
+  font-size: medium !important;
+}
+
+html h5 {
+  font-size: 13px !important;
+}
+
+html h6 {
+  font-size: 12px !important;
+}

@@ -1,0 +1,77 @@
+.ui.divider {
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+}
+
+.rtvheight {
+  min-height: 40rem !important;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.rtvlink{
+  margin-right:10px!important;
+  margin-bottom: 10px!important;
+  display:inline-block!important;
+  min-width: 60px!important;
+  text-align:center!important;
+  color:gray!important;
+}
+.rtvlink:hover{
+  cursor:pointer!important;
+  text-decoration: underline!important;
+}
+
+/** Input **/
+.ui.input input, select, option, textarea{
+  padding: 0.4em!important;
+}
+.ui.input[class*="left icon"] > input
+{
+  padding-left: 1.47143em;
+  padding-right: 0.6em;
+}
+.ui.input input{
+  -webkit-box-shadow:inset 0 2px 3px rgba(0,0,0,.1)!important;
+  -moz-box-shadow:inset 0 2px 3px rgba(0,0,0,.1)!important;
+  box-shadow:inset 0 2px 3px rgba(0,0,0,.1)!important;
+}
+/** Dropdown **/
+.ui.dropdown, .ui.selection.dropdown{
+  padding: 0.4em!important;
+  min-height: 1.8em!important;
+}
+.ui.dropdown > .dropdown.icon{
+  height: 1em!important;
+}
+.ui.selection.dropdown > .delete.icon, .ui.selection.dropdown > .dropdown.icon, .ui.selection.dropdown > .search.icon{
+  padding: 0.36em!important;
+}
+.ui.labeled.input > .label:not(.corner){
+  padding-top:0.44em!important;
+  padding-bottom:0.36em!important;
+}
+/** Icon **/
+.ui.icon.input > i.icon{
+  width: 1.6em!important;
+}
+.ui.button{
+  padding-top: 0.52em!important;
+  padding-bottom: 0.52em!important;
+}
+.z-clean-margin{
+  padding:0em!important;
+}
+.vicon{
+  width:16px!important;
+  height:16px!important;
+  display: inline-block!important;
+  margin-left:0.3em!important;
+  margin-right:0.3em!important;
+}

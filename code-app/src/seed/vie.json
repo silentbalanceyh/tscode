@@ -1,0 +1,28 @@
+{
+  "HOST":"localhost",
+  "LANGUAGE":"cn",
+  "DATABASE":"DB_LOKI",
+  "REST":{
+    "PORT":8083,
+    "ENDPOINT":"/api"
+  },
+  "SOCK":{
+    "PORT":8888,
+    "ENDPOINT":"/api/wsk"
+  },
+  "DEBUG":{
+    "PROP":true,
+    "RULE":false,
+    "INPUT":true,
+    "PERF":false,
+    "WSONLY":true,
+    "TIMER":true
+  },
+  "SIGMA":["data","app","hotel","sigma"],
+  "APKEY":"hotel",
+  "TIME":"YYYY-MM-DD HH:mm",
+  "INFORMATION":{
+    "HPE":"http://16.186.77.117:8083"
+  }
+}
+

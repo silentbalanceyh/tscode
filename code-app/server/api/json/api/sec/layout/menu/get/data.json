@@ -1,0 +1,158 @@
+{
+  "data":[
+    {
+      "name": "uimc.system",
+      "text": "系统设置",
+      "icon": "recycle",
+      "items": [
+        {
+          "target": "/sys/dashboard",
+          "name": "uim.sys.dashboard",
+          "text": "系统面板",
+          "icon": "dashboard"
+        },
+        {
+          "target": "/sys/account",
+          "name": "uim.sys.account",
+          "text": "账号管理",
+          "icon": "user"
+        },
+        {
+          "target": "/sys/settings",
+          "name": "uim.sys.settings",
+          "text": "应用配置",
+          "icon": "settings"
+        },
+        {
+          "target": "/sys/feature",
+          "name": "uim.sys.feature",
+          "text": "功能组件",
+          "icon": "usb"
+        },
+        {
+          "target": "/sys/status",
+          "name": "uim.sys.status",
+          "text": "状态监控",
+          "icon": "bar chart"
+        }
+      ]
+    },
+    {
+      "name": "uimc.model",
+      "text": "建模工具",
+      "icon": "cubes",
+      "items": [
+        {
+          "target": "/mod/database",
+          "name": "uim.mod.database",
+          "text": "模型管理",
+          "icon": "database"
+        },
+        {
+          "target": "/mod/route",
+          "name": "uim.mod.route",
+          "text": "路由管理",
+          "icon": "sitemap"
+        },
+        {
+          "target": "/mod/api",
+          "name": "uim.mod.api",
+          "text": "接口管理",
+          "icon": "options"
+        },
+        {
+          "target": "/mod/component",
+          "name": "uim.mod.component",
+          "text": "组件管理",
+          "icon": "cube"
+        },
+        {
+          "target": "/mod/osgi",
+          "name": "uim.mod.osgi",
+          "text": "OSGI插件",
+          "icon": "plug"
+        }
+      ]
+    },
+    {
+      "name": "uimc.app",
+      "text": "应用管理",
+      "icon": "grid layout",
+      "items": [
+        {
+          "target": "/app/apps",
+          "name": "uim.app.apps",
+          "text": "终端监控",
+          "icon": "desktop"
+        },
+        {
+          "target": "/app/modules",
+          "name": "uim.app.modules",
+          "text": "模块管理",
+          "icon": "puzzle"
+        },
+        {
+          "target": "/app/web",
+          "name": "uim.app.web",
+          "text": "Web管理",
+          "icon": "browser"
+        },
+        {
+          "target": "/app/tp",
+          "name": "uim.app.tp",
+          "text": "三方接口",
+          "icon": "translate"
+        },
+        {
+          "target": "/app/protect",
+          "name": "uim.app.protect",
+          "text": "应用安全",
+          "icon": "protect"
+        },
+        {
+          "target": "/app/workflow",
+          "name": "uim.app.workflow",
+          "text": "工作流引擎",
+          "icon": "fork"
+        }
+      ]
+    },
+    {
+      "name": "uimc.release",
+      "text": "发布管理",
+      "icon": "legal",
+      "items": [
+        {
+          "target": "/rel/upload",
+          "name": "uim.rel.upload",
+          "text": "数据上传",
+          "icon": "cloud upload"
+        },{
+          "target": "/rel/deploy",
+          "name": "uim.rel.deploy",
+          "text": "应用发布",
+          "icon": "codepen"
+        },{
+          "target": "/rel/backup",
+          "name": "uim.rel.backup",
+          "text": "版本备份",
+          "icon": "suitcase"
+        },{
+          "target": "/rel/verify",
+          "name": "uim.rel.verify",
+          "text": "应用验证",
+          "icon": "spinner"
+        },{
+          "target": "/rel/connect",
+          "name": "uim.rel.connect",
+          "text": "引擎连接",
+          "icon": "diamond"
+        }
+      ]
+    }
+  ],
+  "status": {
+    "message": "OK",
+    "code": 200
+  }
+}

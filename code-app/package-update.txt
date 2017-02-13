@@ -1,0 +1,35 @@
+dependencies
+npm install --save babel-cli babel-core babel-loader babel-plugin-transform-runtime babel-polyfill babel-preset-es2015 babel-preset-react babel-preset-stage-0 babel-register redux-promise-middleware babel-runtime better-npm-run css-loader cssnano debug extract-text-webpack-plugin superagent file-loader fs-extra history html-webpack-plugin imports-loader ip crypto-js json-loader jquery keymirror koa koa-connect-history-api-fallback koa-convert koa-proxy koa-static node-sass normalize.css postcss-loader react react-dom react-redux react-router react-router-redux redux redux-form redux-thunk rimraf sass-loader style-loader url-loader webpack yargs koa-cors sync-request q redux-promise redux-logger redux-catch
+devDependencies
+npm install --save-dev babel-eslint chai chai-as-promised chai-enzyme cheerio codecov enzyme eslint eslint-config-standard eslint-config-standard-react eslint-plugin-babel eslint-plugin-promise eslint-plugin-react eslint-plugin-standard isparta-loader karma karma-coverage karma-mocha karma-mocha-reporter karma-phantomjs-launcher karma-webpack-with-fast-source-maps mocha nodemon phantomjs-prebuilt react-addons-test-utils redbox-react sinon sinon-chai webpack-dev-middleware webpack-hot-middleware
+
+$ npm install -g npm-check-updates
+$ npm-check-updates -u
+$ npm install
+$ ncu -a
+$ node -p "[process.platform, process.arch, process.versions.modules].join('-')"
+filter function:
+/** 过滤功能，用于隐藏安全性强的信息 **/
+const hidden = (value) => {
+  let retVal = value;
+  if(value.length > 3){
+    retVal = value.substring(0,3);
+    let _idx = value.indexOf('@');
+    let left = value.substring(3,0 < _idx?_idx:value.length);
+    for(let idx = 0; idx < left.length; idx++ ){
+      retVal += "*";
+    }
+    if(0 < _idx){
+      let email = value.substring(_idx + 1, value.length);
+      let postfix = email.substring(email.indexOf('.'),email.length);
+      let hdfix = email.substring(0,email.indexOf('.'));
+      let result = "@";
+      for(let idx = 0; idx < hdfix.length; idx++ ){
+        result += "*";
+      }
+      result += postfix;
+      retVal += result;
+    }
+  }
+  return retVal;
+}

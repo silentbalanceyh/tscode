@@ -1,0 +1,33 @@
+.header {
+  display: block !important;
+  height: 5.8rem !important;
+}
+
+.row {
+  display: inline-flex !important;
+  display: -webkit-inline-flex !important;
+  align-items: stretch !important;
+}
+
+.menucol {
+  margin-left: 0.3em !important;
+  padding-right: 0em !important;
+  width: 15.2em !important;
+}
+
+.content {
+  flex: 1 !important;
+  padding-left: 0.3em !important;
+  margin-right: 0.3em !important;
+  position: relative!important;
+}
+
+.footer{
+  height: 4rem!important;
+}
+
+.menu{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+

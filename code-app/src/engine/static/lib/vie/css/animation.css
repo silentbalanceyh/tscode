@@ -1,0 +1,25 @@
+.menu-enter {
+  opacity: 0.01;
+}
+
+.menu-enter.menu-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.menu-leave {
+  opacity: 1;
+}
+
+.menu-leave.menu-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.menu-appear {
+  opacity: 0.01;
+}
+
+.menu-appear.menu-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}

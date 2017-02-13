@@ -1,0 +1,10 @@
+.mask {
+  position: absolute!important;
+  top: 0px!important;
+  filter: alpha(opacity=60)!important;
+  z-index: 3000!important;
+  left: 0px!important;
+  opacity:0.5!important;
+  -moz-opacity:0.5!important;
+  width: 100%!important;
+}

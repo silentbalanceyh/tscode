@@ -1,0 +1,32 @@
+{
+  "data":[
+    {
+      "target": "/cli/meta",
+      "name": "uim.cli.meta",
+      "text": "元数据库",
+      "icon": "database"
+    },
+    {
+      "target": "/cli/config",
+      "name": "uim.cli.config",
+      "text": "配置服务器",
+      "icon": "server"
+    },
+    {
+      "target": "/cli/osgi",
+      "name": "uim.cli.osgi",
+      "text": "OSGI模块",
+      "icon": "terminal"
+    },
+    {
+      "target": "/cli/vertx",
+      "name": "uim.cli.vertx",
+      "text": "VertX引擎",
+      "icon": "setting"
+    }
+  ],
+  "status": {
+    "message": "OK",
+    "code": 200
+  }
+}

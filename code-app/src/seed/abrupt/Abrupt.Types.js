@@ -1,0 +1,10 @@
+export default {
+  // 模块加载异常
+  FAILURE_MOD_INIT:'$$RTV/FAILURE/MOD_INIT',
+  // 应用加载异常
+  FAILURE_APP_INIT:'$$RTV/FAILURE/APP_INIT',
+  // 登录失败异常
+  FAILURE_ACT_LOGIN:'$$RTV/FAILURE/ACT_LOGIN',
+  // 表单提交异常
+  FAILURE_ACT_FORM:`$$RTV/FAILURE/ACT_FORM`
+}

@@ -1,0 +1,24 @@
+.panel{
+  width:60%!important;
+  min-height:6em!important;
+}
+.menu{
+  padding-top:0em!important;
+  padding-bottom:0em!important;
+  margin-top:0em!important;
+  margin-bottom:0em!important;
+}
+.container{
+  padding: 0.3em!important;
+}
+.tab:hover{
+  cursor:pointer!important;
+}
+.hidden{
+  color:white!important;
+  border:none!important;
+  border-radius: 0em!important;
+  -webkit-border-radius: 0em!important;
+  -moz-border-radius: 0em!important;
+  visibility: hidden;
+}

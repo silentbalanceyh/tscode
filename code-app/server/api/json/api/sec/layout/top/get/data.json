@@ -1,0 +1,60 @@
+{
+  "data":{
+    "in": [
+      {
+        "target": "/pvt/person",
+        "name": "uim.pvt.person",
+        "text": "我的账号",
+        "icon": "privacy"
+      },
+      {
+        "target": "/pvt/password",
+        "name": "uim.pvt.password",
+        "text": "修改密码",
+        "icon": "lock"
+      },
+      {
+        "target": "javascript:fnSignOut",
+        "name": "uim.pvt.sign.out",
+        "text": "注销",
+        "icon": "sign out"
+      },
+      {
+        "target": "/pub/help",
+        "name": "uim.pub.help",
+        "text": "帮助",
+        "icon": "help"
+      }
+    ],
+    "out": [
+      {
+        "target": "/pub/register",
+        "name": "uim.pub.register",
+        "text": "注册账号",
+        "icon": "add user"
+      },
+      {
+        "target": "/pvt/forget",
+        "name": "uim.pub.forget",
+        "text": "忘记密码",
+        "icon": "unlock"
+      },
+      {
+        "target": "/pvt/signin",
+        "name": "uim.pub.sign.in",
+        "text": "我要登陆",
+        "icon": "sign in"
+      },
+      {
+        "target": "/pvt/help",
+        "name": "uim.pub.help",
+        "text": "帮助",
+        "icon": "help"
+      }
+    ]
+  },
+  "status": {
+    "message": "OK",
+    "code": 200
+  }
+}

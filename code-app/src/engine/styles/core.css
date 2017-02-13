@@ -1,0 +1,52 @@
+/*
+Error: CSS import directives may only be used at the root of a document.
+        on line 3 of core.scss
+
+1: :global {
+2:   @import 'base';
+3:   @import '../../../node_modules/normalize.css/normalize.css';
+4: 
+5:   // Some best-practice CSS that's useful for most apps
+6:   // Just remove them if they're not what you want
+7:   html {
+8:     box-sizing: border-box;
+
+Backtrace:
+core.scss:3
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:51:in `visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:38:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:17:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:51:in `visit_children'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:59:in `visit_root'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/check_nesting.rb:17:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:24:in `visit'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:35:in `css_tree'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+C:/Dev/Ruby/lib/ruby/gems/2.3.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
+C:/Dev/Ruby/bin/scss:23:in `load'
+C:/Dev/Ruby/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: CSS import directives may only be used at the root of a document.\A         on line 3 of core.scss\A \A 1: :global {\A 2:   @import 'base';\A 3:   @import '../../../node_modules/normalize.css/normalize.css';\A 4: \A 5:   // Some best-practice CSS that's useful for most apps\A 6:   // Just remove them if they're not what you want\A 7:   html {\A 8:     box-sizing: border-box;"; }

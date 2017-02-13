@@ -1,0 +1,6 @@
+{
+  "name":"Criteria",
+  "version":"1.0.0",
+  "private":true,
+  "main":"./Criteria.js"
+}

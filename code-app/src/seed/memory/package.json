@@ -1,0 +1,6 @@
+{
+  "name":"Memory",
+  "version":"1.0.0",
+  "private":true,
+  "main":"./Memory.js"
+}

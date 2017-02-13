@@ -1,0 +1,6 @@
+{
+  "name":"Ruler",
+  "version":"1.0.0",
+  "private":true,
+  "main":"./Ruler.js"
+}

@@ -1,0 +1,50 @@
+{
+  "original": null,
+  "response": {
+    "req": {
+      "method": "GET",
+      "url": "http://localhost:8083/api/config/vie.app.console",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      }
+    },
+    "xhr": {},
+    "text": "{\"error\":{\"code\":-30039,\"message\":\"[E30039] Class -> com.viee.impl.request.SignKeaper | [401] (Signature) Signature feature has been enabled, required param \\\"sig\\\" missed in current request.\"}}",
+    "statusText": "Unauthorized",
+    "statusCode": 401,
+    "status": 401,
+    "statusType": 4,
+    "info": false,
+    "ok": false,
+    "clientError": true,
+    "serverError": false,
+    "error": {
+      "status": 401,
+      "method": "GET",
+      "url": "http://localhost:8083/api/config/vie.app.console"
+    },
+    "accepted": false,
+    "noContent": false,
+    "badRequest": false,
+    "unauthorized": true,
+    "notAcceptable": false,
+    "notFound": false,
+    "forbidden": false,
+    "headers": {
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "header": {
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "type": "application/json",
+    "charset": "UTF-8",
+    "body": {
+      "error": {
+        "code": -30039,
+        "message": "[E30039] Class -> com.viee.impl.request.SignKeaper | [401] (Signature) Signature feature has been enabled, required param \"sig\" missed in current request."
+      }
+    }
+  },
+  "status": 401
+}

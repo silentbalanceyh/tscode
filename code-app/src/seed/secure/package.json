@@ -1,0 +1,6 @@
+{
+  "name":"Secure",
+  "version":"1.0.0",
+  "private":true,
+  "main":"./Secure.js"
+}

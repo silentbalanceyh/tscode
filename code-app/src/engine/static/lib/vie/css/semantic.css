@@ -1,0 +1,250 @@
+/** 基础元素的配置项 **/
+.jsxPure{}
+.jsxIcon{}
+.jsxUnit{}
+.jsxSelect{
+  min-height: 26px!important;
+}
+.jsxMenu .itrem{
+  padding: 0.47rem 0.51rem!important;
+}
+.jsxItem{
+  padding: 0.47rem 0.51rem!important;
+}
+.jsxTreeItem{
+  margin-left: 0.2rem!important;
+  margin-top: 0rem!important;
+  margin-bottom: 0rem!important;
+}
+.jsxCheck{}
+.jsxMulti3{}
+.jsxMask{
+  min-height:400px;
+}
+.jsxLeft{
+  overflow-y: auto!important;
+  overflow-x: hidden!important;
+}
+.jsxContent{
+  overflow-y: auto!important;
+  overflow-x: hidden!important;
+}
+/** 基础元素宽度分辨率 **/
+/** 1600 < **/
+@media screen and (min-width: 1700px ) {
+  .jsxPure {
+    width: 16rem!important;
+  }
+  .jsxIcon{
+    width: 16rem!important;
+  }
+  .jsxUnit{
+    width: 13.3rem!important;
+  }
+  .jsxSelect{
+    width: 16rem!important;
+    min-width: 16rem!important;
+  }
+  .jsxCheck{
+    width: 16rem!important;
+    min-width: 16rem!important;
+  }
+  .jsxMulti3{
+    width: 82rem!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** 1600 < **/
+@media screen and (max-width: 1700px ) {
+  .jsxPure {
+    width: 16rem!important;
+  }
+  .jsxIcon{
+    width: 16rem!important;
+  }
+  .jsxUnit{
+    width: 13.3rem!important;
+  }
+  .jsxSelect{
+    width: 16rem!important;
+    min-width: 16rem!important;
+  }
+  .jsxCheck{
+    width: 16rem!important;
+    min-width: 16rem!important;
+  }
+  .jsxMulti3{
+    width: 73rem!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** < 1600 **/
+@media screen and (max-width: 1600px ) {
+  .jsxPure {
+    width: 15.2rem!important;
+  }
+  .jsxIcon {
+    width: 15.2rem!important;
+  }
+  .jsxUnit {
+    width: 15.2rem!important;
+  }
+  .jsxSelect {
+    width: 15.2rem!important;
+    min-width: 15.2rem!important;
+  }
+  .jsxMulti3{
+    width: 69.6rem!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** 1440 < 1500 **/
+@media screen and (max-width: 1500px ) {
+  .jsxPure {
+    width: 13.4rem!important;
+  }
+  .jsxIcon {
+    width: 13.4rem!important;
+  }
+  .jsxUnit {
+    width: 10.8rem!important;
+  }
+  .jsxSelect {
+    width: 13.4rem!important;
+    min-width: 13.4rem!important;
+  }
+  .jsxMulti3{
+    width: 62.5rem!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** 1360 < 1400 **/
+@media screen and (max-width: 1400px ) {
+  .jsxPure {
+    width: 12.6rem!important;
+  }
+  .jsxIcon {
+    width: 12.6rem!important;
+  }
+  .jsxUnit {
+    width: 9.86rem!important;
+  }
+  .jsxSelect {
+    width: 12.6rem!important;
+    min-width: 12.6rem!important;
+  }
+  .jsxMulti3{
+    width: 58.3rem!important;
+  }
+  .jsxMask{
+    max-height: 590px!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** 1280 < 1300 **/
+@media screen and (max-width: 1300px ) {
+  .jsxPure {
+    width: 11rem!important;
+  }
+  .jsxIcon {
+    width: 11rem!important;
+  }
+  .jsxUnit {
+    width: 8.26rem!important;
+  }
+  .jsxSelect {
+    width: 10.97rem!important;
+    min-width: 10.97rem!important;
+  }
+  .jsxTreeItrem{
+    width: 13rem!important;
+  }
+  .jsxMulti3{
+    width: 53rem!important;
+  }
+  .jsxCheck{
+    width: 7rem!important;
+    min-width: 7rem!important;
+  }
+}
+/** 基础元素高度分辨率 **/
+/** --> x 900 **/
+@media screen and (min-height: 950px ) {
+  .jsxMask{
+    max-height: 710px!important;
+  }
+  .jsxLeft{
+    max-height: 710px!important;
+  }
+  .jsxContent{
+    min-height: 760px!important;
+    max-height: 780px!important;
+  }
+}
+/** --> x 900 **/
+@media screen and (max-height: 950px ) {
+  .jsxMask{
+    max-height: 690px!important;
+  }
+  .jsxLeft{
+    max-height: 690px!important;
+  }
+  .jsxContent{
+    min-height: 730px!important;
+    max-height: 750px!important;
+  }
+}
+/** --> x 900 **/
+@media screen and (max-height: 800px ) {
+  .jsxMask{
+    max-height: 620px!important;
+  }
+  .jsxLeft{
+    max-height: 520px!important;
+  }
+  .jsxContent{
+    min-height: 560px!important;
+    max-height: 580px!important;
+  }
+}
+/** --> x 800 **/
+@media screen and (max-height: 700px ) {
+  .jsxMask{
+    max-height: 560px!important;
+  }
+  .jsxLeft{
+    max-height: 460px!important;
+  }
+  .jsxContent{
+    min-height: 500px!important;
+    max-height: 520px!important;
+  }
+}
+/** --> x 768 **/
+@media screen and (max-height: 660px ) {
+  .jsxMask{
+    max-height: 530px!important;
+  }
+  .jsxLeft{
+    max-height: 430px!important;
+  }
+  .jsxContent{
+    min-height: 470px!important;
+    max-height: 490px!important;
+  }
+}

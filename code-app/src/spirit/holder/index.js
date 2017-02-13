@@ -1,0 +1,6 @@
+export CubeHolder from './CubeHolder/Component'
+export DivideHolder from './DivideHolder/Component'
+export ListHolder from './ListHolder/Component'
+export MessageHolder from './MessageHolder/Component'
+export SingleFormHolder from './SingleFormHolder/Component'
+export TabListHolder from './TabListHolder/Component'

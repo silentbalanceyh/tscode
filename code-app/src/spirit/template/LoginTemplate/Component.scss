@@ -1,0 +1,27 @@
+.bg {
+  background: -moz-linear-gradient(top, #3884CD 0%, #00256B 80%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3884CD), color-stop(80%, #00256B));
+  background: -webkit-linear-gradient(top, #3884CD 0%, #00256B 80%);
+  background: -o-linear-gradient(top, #3884CD 0%, #00256B 80%);
+  background: -ms-linear-gradient(top, #3884CD 0%, #00256B 80%);
+  background: linear-gradient(to bottom, #3884CD 0%, #00256B 80%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.header{
+  height:200px;
+}
+
+.frame {
+  min-height: 270px;
+  background-color: #F0FEFF;
+}
+
+.title{
+  background-color: #4682B4!important;
+}
+

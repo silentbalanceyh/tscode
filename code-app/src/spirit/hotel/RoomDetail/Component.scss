@@ -1,0 +1,82 @@
+.top {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top: 0 !important;
+  padding-bottom: 0.3em !important;
+  padding-top: 0.3em !important;
+}
+
+.bottom {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom: none !important;
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
+
+.item{
+  border-left:0em!important;
+  border-right:0em!important;
+}
+.search{
+  margin-left:0.5em!important;
+}
+.header{
+  margin-top:0.2em!important;
+  margin-left:1em!important;
+}
+.header th{
+  background-color: #4682B4!important;
+  color: white!important;
+  font-size: 13px!important;
+}
+.pagelist{
+  padding: 0.5em!important;
+}
+.actions{
+  text-align: center!important;
+  width: 100%!important;
+}
+
+.readonly{
+  background-color: rgba(200, 202, 203, 0.29)!important;
+}
+
+.ilabel{
+  margin-top: 0.48em
+}
+
+.ctitle{
+  padding-top: 0em!important;
+  padding-bottom: 0em!important;
+}
+.tabpage{
+  padding: 0.5em!important;
+}
+
+.citem{
+  margin-top:0em!important;
+  margin-bottom:0em!important;
+  padding-top:0.2em!important;
+  padding-bottom:0.2em!important;
+}
+
+.citem:hover{
+  cursor:default!important;
+  background-color:white!important;
+}
+
+.cdatalist{
+  margin-top:0em!important;
+  margin-bottom:0em!important;
+  padding-top:0em!important;
+  padding-bottom:0em!important;
+}
+
+.cdatalist:hover{
+  cursor:default!important;
+  background-color:white!important;
+}
+.ctab:hover{
+  cursor:pointer!important;
+}

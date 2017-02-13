@@ -1,0 +1,27 @@
+.bottom {
+  padding: 0.5em 0.5em 0.8em 0.5em;
+  background-color: #4682B4;
+  color: white;
+  position: fixed;
+  z-index: 101;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  top: auto;
+  right: auto;
+}
+
+.item {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.icon {
+  float:left!important;
+}
+
+.link {
+  color: white !important;
+  text-decoration: underline !important;
+}

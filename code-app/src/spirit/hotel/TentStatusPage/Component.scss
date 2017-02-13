@@ -1,0 +1,50 @@
+.item{
+  padding:0.2em!important;
+}
+.item:hover{
+  cursor:pointer!important;
+  background-color:white!important;
+}
+.hitem{
+  padding:0.2em!important;
+}
+.hitem:hover{
+  cursor:default!important;
+  background-color:white!important;
+}
+
+.list{
+  padding-left:0em!important;
+  padding-right:0em!important;
+}
+.room{
+  width:7em!important;
+  height:7.2em!important;
+  float:left!important;
+  text-align:center!important;
+  margin-left:0em!important;
+  margin-right:0em!important;
+  padding: 0em!important;
+  border: solid 1px black!important;
+  border-radius: 0.2em!important;
+  -webkit-border-radius: 0.2em!important;
+}
+.taken{
+  width:100%!important;
+  min-height:2.2em!important;
+}
+.left{
+  float:left!important;
+}
+
+.datalist{
+  text-align:left!important;
+  margin-top:0em!important;
+  margin-bottom:0em!important;
+  padding-top:0em!important;
+  padding-bottom:0em!important;
+}
+.datalist:hover{
+  cursor:default!important;
+  background-color:white!important;
+}

@@ -1,0 +1,45 @@
+.header{
+  margin-top:0em!important;
+  margin-bottom: 0.3em!important;
+}
+.content{
+  padding-left: 0em !important;
+  padding-right: 0em !important;
+  padding-top: 0em!important;
+}
+.item{
+  padding: 0em 1em 0em 1em!important;
+}
+.closureItem{
+  padding: 0em 0.3em 0em 1em!important;
+}
+.disabled{
+  color:gray!important;
+}
+.disabled:hover{
+  cursor:default!important;
+}
+.item:hover,.closureItem:hover{
+  cursor:pointer;
+}
+.top{
+  margin-top:0em!important;
+  padding-top:0em!important;
+}
+.page{
+  padding:0em!important;
+  border-left: 0em!important;
+  border-bottom: 0em!important;
+  border-right: 0em!important;
+}
+.closure{
+  margin-left: 0.3em!important;
+}
+.closure:hover{
+  border: solid 1px!important;
+}
+.list{
+  padding-top:0em!important;
+  padding-bottom:0em!important;
+  margin-top:0em!important;
+}

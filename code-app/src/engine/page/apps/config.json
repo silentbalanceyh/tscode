@@ -1,0 +1,31 @@
+{
+  "internal":[
+    {
+      "name":"console",
+      "text":"Vie Engine Console",
+      "route":"/vem/login"
+    }
+  ],
+  "training":[
+    {
+      "name":"counter",
+      "text":"Redux Demo ( Counter )",
+      "route":"/rdx/counter"
+    },{
+      "name":"hdptuner",
+      "text":"HDP Performance Tuner",
+      "route":"/hdp/tuner"
+    },{
+      "name":"develop",
+      "text":"Develop Container",
+      "route":"/develop/entrance"
+    }
+  ],
+  "projects":[
+    {
+      "name":"hotel",
+      "text":"酒店管理系统 Demo",
+      "route":"/htl/login/index"
+    }
+  ]
+}
