@@ -23,9 +23,9 @@
   ],
   "projects":[
     {
-      "name":"hotel",
-      "text":"酒店管理系统 Demo",
-      "route":"/htl/login/index"
+      "name":"tscode",
+      "text":"Ts Demo",
+      "route":"/ts/demo"
     }
   ]
 }
