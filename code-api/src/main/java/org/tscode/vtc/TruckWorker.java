@@ -33,8 +33,6 @@ public class TruckWorker extends AbstractVerticle {
 			if (null != params)
 				System.out.println("Request:" + params.encode());
 			final JsonObject response = this.serivce.queryLocal(params);
-			if (null != response)
-				System.out.println("Response:" + response.encode());
 			handler.reply(response);
 		});
 	}

@@ -33,12 +33,14 @@ public class Server {
 		/** Create vertx instances **/
 		final Vertx vertxRef = FACTORY.vertx(opt);
 		/** TODO: DeploymentOptions **/
+		final DeploymentOptions agentOpts = new DeploymentOptions();
+		agentOpts.setInstances(144);
 		final RouterAgent agent = new RouterAgent();
 		vertxRef.deployVerticle(agent);
 		/** Deploy **/
 		final DeploymentOptions opts = new DeploymentOptions();
 		opts.setWorker(true);
-		opts.setInstances(32);
+		opts.setInstances(256);
 		final String workerName = TruckWorker.class.getName();
 		vertxRef.deployVerticle(workerName, opts, handler -> {
 			System.out.println("Successful to deploy workers: " + workerName + ", Instances = " + opts.getInstances());

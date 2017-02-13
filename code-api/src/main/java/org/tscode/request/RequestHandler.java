@@ -4,6 +4,7 @@ import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.http.HttpHeaders;
+import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -27,8 +28,7 @@ public class RequestHandler implements Handler<RoutingContext> {
 		/** **/
 		final Vertx vertx = event.vertx();
 		final EventBus bus = vertx.eventBus();
-
-		final JsonObject params = new JsonObject();
+		final JsonObject params = extractParams(event);
 		/** **/
 		bus.<JsonObject>send("MSG://QUEUE/TRUCKS", params, handler -> {
 			/** **/
@@ -51,6 +51,16 @@ public class RequestHandler implements Handler<RoutingContext> {
 	}
 	// ~ Methods =============================================
 	// ~ Private Methods =====================================
+	private JsonObject extractParams(final RoutingContext event){
+		/** Get Parameters **/
+		final HttpServerRequest request = event.request();
+		final JsonObject params = new JsonObject();
+		params.put("longitude",Double.parseDouble(request.getParam("lng")));
+		params.put("latitude",Double.parseDouble(request.getParam("lat")));
+		// Convert KM to m
+		params.put("distance", Double.parseDouble(request.getParam("distance")) * 1000);
+		return params;
+	}
 	// ~ Get/Set =============================================
 	// ~ hashCode,equals,toString ============================
 }

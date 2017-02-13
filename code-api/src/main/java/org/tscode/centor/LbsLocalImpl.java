@@ -31,7 +31,7 @@ public class LbsLocalImpl implements LbsService {
 		// Create Entity from data
 		final MatrixEntity entity = new MatrixEntity(data);
 
-		return new JsonObject().put("data", entity.queryAll());
+		return new JsonObject().put("data", entity.queryByFilter(params));
 	}
 
 	/** **/

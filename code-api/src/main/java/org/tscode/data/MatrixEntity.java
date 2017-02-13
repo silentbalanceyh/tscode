@@ -3,6 +3,10 @@ package org.tscode.data;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.tscode.shape.util.Distance;
+import org.tscode.util.Log;
 import org.tscode.vtc.Searcher;
 
 import io.vertx.core.json.JsonArray;
@@ -19,6 +23,8 @@ import net.sf.oval.guard.Guarded;
 @Guarded
 public class MatrixEntity {
 	// ~ Static Fields =======================================
+	/** **/
+	private static Logger LOGGER = LoggerFactory.getLogger(MatrixEntity.class);
 	// ~ Instance Fields =====================================
 	/**
 	 * Field -> Index
@@ -55,6 +61,33 @@ public class MatrixEntity {
 		 * dataArr.size()){ return; } });
 		 **/
 		return dataArr;
+	}
+
+	/** **/
+	public JsonArray queryByFilter(final JsonObject params) {
+		final JsonArray dataArr = new JsonArray();
+		final int limit = data.size();
+		for (int idx = 0; idx < limit; idx++) {
+			final JsonObject toData = this.data.get(idx).getData();
+			if(this.inRange(params, toData)){
+				dataArr.add(this.data.get(idx).getData());
+			}
+		}
+		Log.info(LOGGER,"Found trunks: " + dataArr.size());
+		return dataArr;
+	}
+
+	public boolean inRange(final JsonObject from, final JsonObject to) {
+		/** **/
+		double fromLng = from.getDouble("longitude");
+		double fromLat = from.getDouble("latitude");
+		/** **/
+		double toLat = Double.parseDouble(to.getString("latitude"));
+		double toLng = Double.parseDouble(to.getString("longitude"));
+		/** **/
+		double distance = Distance.calculate(fromLat, fromLng, toLat, toLng);
+		double range = from.getDouble("distance");
+		return distance < range;
 	}
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================

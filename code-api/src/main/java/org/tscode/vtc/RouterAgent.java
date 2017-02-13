@@ -29,7 +29,12 @@ public class RouterAgent extends AbstractVerticle {
 		/** Set Router **/
 		final Router router = Router.router(vertx);
 		/** Temp code **/
-		RouteUtil.registerTrucks(router);
+		{
+			/** 1.Cross Domain **/
+			RouteUtil.registerCors(router);
+			/** 2.Common Api **/
+			RouteUtil.registerTrucks(router);
+		}
 		/** **/
 		server.requestHandler(router::accept).listen(8083);
 		System.out.println("Successful to deploy!");
