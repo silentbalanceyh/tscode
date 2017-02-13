@@ -54,4 +54,95 @@
 			<artifactId>netty-codec-http</artifactId>
 		</dependency>
 	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<targetPath>../wrapper/jsw/tscode-engine/etc</targetPath>
+				<directory>src/main/resources/</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.json</include>
+					<include>**/*.js</include>
+					<include>**/*.sql</include>
+					<include>**/*.jar</include>
+					<include>**/*.bat</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>${maven.mojo.appassembler.version}</version>
+				<executions>
+					<execution>
+						<id>generate start scripts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+						<configuration>
+							<repositoryLayout>flat</repositoryLayout>
+							<programs>
+								<program>
+									<!-- Engine Server -->
+									<mainClass>
+										org.tscode.web.Server
+									</mainClass>
+									<id>tscode-engine</id>
+								</program>
+							</programs>
+						</configuration>
+					</execution>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>generate-daemons</goal>
+						</goals>
+						<configuration>
+							<repositoryLayout>flat</repositoryLayout>
+							<target>${project.build.directory}/wrapper</target>
+							<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+							<useDaemonIdAsWrapperConfName>true</useDaemonIdAsWrapperConfName>
+							<daemons>
+								<daemon>
+									<id>tscode-engine</id>
+									<mainClass>org.tscode.web.Server</mainClass>
+									<!-- <commandLineArguments> <commandLineArgument>start</commandLineArgument> 
+										</commandLineArguments> -->
+									<!-- <jvmSettings> <initialMemorySize>20M</initialMemorySize> <maxMemorySize>200M</maxMemorySize> 
+										<maxStackSize>128M</maxStackSize> </jvmSettings> -->
+									<platforms>
+										<platform>jsw</platform>
+									</platforms>
+									<generatorConfigurations>
+										<generatorConfiguration>
+											<generator>jsw</generator>
+											<includes>
+												<include>linux-x86-32</include>
+												<include>linux-x86-64</include>
+												<include>macosx-universal-32</include>
+												<include>macosx-universal-64</include>
+												<include>windows-x86-32</include>
+												<include>windows-x86-64</include>
+											</includes>
+											<configuration>
+												<property>
+													<name>configuration.directory.in.classpath.first</name>
+													<value>etc</value>
+												</property>
+											</configuration>
+										</generatorConfiguration>
+									</generatorConfigurations>
+								</daemon>
+							</daemons>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
