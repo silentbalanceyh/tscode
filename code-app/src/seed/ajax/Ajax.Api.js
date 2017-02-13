@@ -26,11 +26,12 @@ const repdor = (defer, {uri, method}) => {
       defer.reject(error);
     } else {
       const data = res.body.data
+      /**
       const cacheKey = Sign.cacheKey(uri, method)
       if (cacheKey && "get" == method) {
         Logger.Input.cache(uri, method, cacheKey, data, 'Write')
         Secure.Storage.writeData(cacheKey, data)
-      }
+      }**/
       defer.resolve(res.body.data);
     }
   }
@@ -190,6 +191,9 @@ const get = (path, params = {}, refresh) => {
   Sign.signature(path, "GET", params)
   const queryStr = Tool.Builder.buildParams(params);
   uri = uri + queryStr;
+  Logger.Input.request(uri, "GET", params)
+  return request(uri, params, 'get');
+  /**
   if(refresh){
     Logger.Input.request(uri, "GET", params)
     return request(uri, params, 'get');
@@ -203,7 +207,7 @@ const get = (path, params = {}, refresh) => {
       Logger.Input.request(uri, "GET", params)
       return request(uri, params, 'get');
     }
-  }
+  }**/
 }
 
 export default {

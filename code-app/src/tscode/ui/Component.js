@@ -32,10 +32,10 @@ class Component extends React.Component {
     $_fnInit(this.props)
   }
 
-  componentDidUpdate(nextProps) {
+  componentWillUpdate(nextProps) {
     const {$_fnInit, $_fnIsUpdate} = this.props
     if ($_fnIsUpdate(this.props, nextProps)) {
-      $_fnInit(this.props)
+      $_fnInit(nextProps)
     }
   }
 
