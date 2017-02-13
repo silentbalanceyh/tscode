@@ -47,6 +47,11 @@ const fnSelected = (state, {
 }) => {
   if(selected){
     let $state = Immutable.fromJS(state)
+    let $selected = $state.get('selected')
+    if($selected){
+      $selected = $selected.toJS()
+      selected.distance = $selected.distance
+    }
     $state = $state.set('selected',selected)
     // Refresh Markers
     let markers = $state.get('markers')
@@ -61,7 +66,25 @@ const fnSelected = (state, {
   }
 }
 
+const fnDistance = (state,{
+  distance = 5
+}) => {
+  let $state = Immutable.fromJS(state)
+  let selected = $state.get('selected')
+  if(selected){
+    selected = selected.toJS()
+    selected.distance = distance
+    $state = $state.set('selected',selected)
+    return $state.toJS()
+  }else{
+    selected = Object.assign({distance},Future.$_fnSelected())
+    $state = $state.set('selected',selected)
+    return $state.toJS()
+  }
+}
+
 export default{
   SUCCESS_DATA: fnData,
-  SUCCESS_SELECTED: fnSelected
+  SUCCESS_SELECTED: fnSelected,
+  SUCCESS_DISTANCE: fnDistance
 }

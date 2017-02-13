@@ -2,21 +2,26 @@ import React from 'react'
 import {
   GoogleMap,
   withGoogleMap,
-  Marker
+  Marker,
+  Circle
 } from 'react-google-maps'
 import css from './Component.scss'
-
+import Config from '../config.json'
+import Form from './Form'
 const DefinedMap = withGoogleMap(props => {
-
+  let {markers = [], selected = {}} = props
+  if (0 == Object.keys(selected).length) selected = props.onSelected()
+  const distance = (selected.distance) ? selected.distance : 1
   return (
     <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{lat: 37.7, lng: -122.4}}
+      defaultZoom={16}
+      defaultCenter={props.onSelected()}
       onClick={props.onMapClick}
     >
-      {props.markers.map((marker, index) => (
+      {markers.map((marker, index) => (
         <Marker {...marker} onClick={props.onMarker(marker)}/>
       ))}
+      <Circle onClick={props.onMapClick} fillOpacity={0.20} center={selected} radius={distance * 1000}/>
     </GoogleMap>
   )
 });
@@ -35,15 +40,15 @@ class Component extends React.Component {
   }
 
   render() {
-    const {markers = [], data = []} = this.props
-    const {$_fnStatus,$_fnType} = this.props
+    const {markers = [], data = [], selected = {}} = this.props
+    const {$_fnStatus, $_fnType} = this.props
     // Status
     const reports = $_fnStatus(data)
     const rptKeys = Object.keys(reports)
     // Types
     const types = $_fnType(data)
     const tpKeys = Object.keys(types)
-    const {$_fnMapClick, $_fnMarker} = this.props
+    const {$_fnMapClick, $_fnMarker, $_fnSelected} = this.props
     return (
       <main className="ui segment two column grid">
         <div className="row">
@@ -70,10 +75,23 @@ class Component extends React.Component {
                 })
               }
             </div>
+            <div className="ui header">Radius ( km )</div>
+            <Form distance={selected.distance}/>
+            <div className="ui header">Features</div>
+            <div className="ui list">
+              <div className="item">
+                1.When you click any location, the system will search Trucks near this location less than x ( Default = {Config['distance']} ) kilometers.
+              </div>
+              <div className="item">
+                2.Click the Marker on the map to view truck details.
+              </div>
+            </div>
           </div>
-          <div className={`column ${css['right']}`} style={{height: `600px`}}>
+          <div className={`column ${css['right']} jsxMap`}>
             <DefinedMap
+              selected={selected}
               markers={markers}
+              onSelected={$_fnSelected}
               onMapClick={$_fnMapClick(this.props)}
               onMarker={$_fnMarker(this.props)}
               containerElement={

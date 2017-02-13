@@ -16,6 +16,7 @@
   margin-top: 0rem!important;
   margin-bottom: 0rem!important;
 }
+.jsxMap{}
 .jsxCheck{}
 .jsxMulti3{}
 .jsxMask{
@@ -161,6 +162,9 @@
   .jsxPure {
     width: 11rem!important;
   }
+  .jsxMap{
+    min-height: 1200px!important;
+  }
   .jsxIcon {
     width: 11rem!important;
   }
@@ -188,6 +192,9 @@
   .jsxMask{
     max-height: 710px!important;
   }
+  .jsxMap{
+    height: 880px!important;
+  }
   .jsxLeft{
     max-height: 710px!important;
   }
@@ -200,6 +207,9 @@
 @media screen and (max-height: 950px ) {
   .jsxMask{
     max-height: 690px!important;
+  }
+  .jsxMap{
+    height: 700px!important;
   }
   .jsxLeft{
     max-height: 690px!important;
@@ -214,6 +224,9 @@
   .jsxMask{
     max-height: 620px!important;
   }
+  .jsxMap{
+    height: 600px!important;
+  }
   .jsxLeft{
     max-height: 520px!important;
   }
@@ -227,6 +240,9 @@
   .jsxMask{
     max-height: 560px!important;
   }
+  .jsxMap{
+    height: 500px!important;
+  }
   .jsxLeft{
     max-height: 460px!important;
   }
@@ -239,6 +255,9 @@
 @media screen and (max-height: 660px ) {
   .jsxMask{
     max-height: 530px!important;
+  }
+  .jsxMap{
+    height: 460px!important;
   }
   .jsxLeft{
     max-height: 430px!important;

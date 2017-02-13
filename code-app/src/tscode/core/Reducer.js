@@ -11,5 +11,6 @@ for(const key in Types){
 }
 
 export default $$.Redux.Handler.initReducer(HANDLER,{
-  markers:[Future.$_fnLocate()]
+  markers:[Future.$_fnLocate()],
+  selected: Future.$_fnSelected()
 })

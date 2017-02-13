@@ -1,10 +1,10 @@
 import Event from './Event'
 import $$ from '../../seed'
 import Dialog from '../ui/Dialog'
-
+import Config from '../config.json'
 const base = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
 
-const $_fnSelected = () => ({lat: 37.763997637045456, lng: -122.408946454525})
+const $_fnSelected = () => ({lat: 37.763997637045456, lng: -122.408946454525, distance: Config['distance'] })
 
 const $_fnLocate = (position) => {
   if (!position) position = $_fnSelected()
@@ -26,7 +26,6 @@ const $_fnMarker = (props = {}) => (marker = {}) => () => {
     if(mapping && 0 < mapping.length){
       mapping = mapping[0]
     }
-    console.info(mapping)
     if(mapping){
       $$.Dialog.Retort.dialog(Dialog,mapping,'winDialog')
     }
