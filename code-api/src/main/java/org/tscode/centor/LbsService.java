@@ -9,5 +9,7 @@ import io.vertx.core.json.JsonObject;
  */
 public interface LbsService {
 	/** **/
-	JsonObject queryData(JsonObject params);
+	JsonObject queryLocal(JsonObject params);
+	/** **/
+	JsonObject queryRemote(JsonObject params);
 }

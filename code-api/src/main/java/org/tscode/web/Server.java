@@ -34,14 +34,15 @@ public class Server {
 		final Vertx vertxRef = FACTORY.vertx(opt);
 		/** TODO: DeploymentOptions **/
 		final RouterAgent agent = new RouterAgent();
-
-		final TruckWorker worker = new TruckWorker();
+		vertxRef.deployVerticle(agent);
 		/** Deploy **/
 		final DeploymentOptions opts = new DeploymentOptions();
 		opts.setWorker(true);
 		opts.setInstances(32);
-		vertxRef.deployVerticle(agent);
-		vertxRef.deployVerticle(worker, opts);
+		final String workerName = TruckWorker.class.getName();
+		vertxRef.deployVerticle(workerName, opts, handler -> {
+			System.out.println("Successful to deploy workers: " + workerName + ", Instances = " + opts.getInstances());
+		});
 	}
 	// ~ Constructors ========================================
 	// ~ Abstract Methods ====================================

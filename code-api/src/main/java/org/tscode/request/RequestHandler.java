@@ -3,6 +3,7 @@ package org.tscode.request;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
+import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -32,6 +33,7 @@ public class RequestHandler implements Handler<RoutingContext> {
 		bus.<JsonObject>send("MSG://QUEUE/TRUCKS", params, handler -> {
 			/** **/
 			final HttpServerResponse response = event.response();
+	        response.headers().add(HttpHeaders.CONTENT_TYPE,"application/json");
 			// DEBUG
 			if(null != handler.cause()){
 				handler.cause().printStackTrace();

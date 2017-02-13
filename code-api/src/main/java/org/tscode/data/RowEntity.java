@@ -1,4 +1,4 @@
-package org.tscode.centor;
+package org.tscode.data;
 
 import io.vertx.core.json.JsonObject;
 import net.sf.oval.constraint.NotNull;
@@ -10,21 +10,24 @@ import net.sf.oval.guard.Guarded;
  *
  */
 @Guarded
-public class LbsDataSyncImpl implements LbsService{
-
+public class RowEntity {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
+	/** **/
+	private transient JsonObject data;
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
 	// ~ Constructors ========================================
+	/** **/
+	public RowEntity(@NotNull final JsonObject data){
+		this.data = data;
+	}
 	// ~ Abstract Methods ====================================
 	// ~ Override Methods ====================================
 	// ~ Methods =============================================
-	/** **/
-	@Override
-	public JsonObject queryData(@NotNull final JsonObject params) {
-		// TODO Auto-generated method stub
-		return new JsonObject().put("Success","Test");
+	/** 1.Get Data **/
+	public JsonObject getData(){
+		return this.data;
 	}
 	// ~ Private Methods =====================================
 	// ~ Get/Set =============================================
