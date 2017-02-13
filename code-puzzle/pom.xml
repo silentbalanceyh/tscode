@@ -9,9 +9,23 @@
 	<artifactId>code-puzzle</artifactId>
 	<name>Code Library</name>
 	<dependencies>
+		<!-- Vertx -->
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-core</artifactId>
+		</dependency>
+		<!-- JODO Library -->
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-bean</artifactId>
 		</dependency>
 	</dependencies>
 </project>

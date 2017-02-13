@@ -9,6 +9,7 @@ import org.tscode.shape.Planum;
 import org.tscode.shape.Shape;
 import org.tscode.shape.core.Response;
 import org.tscode.shape.impl.TrianglePlanum;
+import org.tscode.util.Instance;
 import org.tscode.util.Log;
 
 import io.vertx.core.json.JsonObject;
@@ -27,10 +28,10 @@ public class TriangleSevImpl implements TriangleService {
 	/** **/
 	private static Logger LOGGER = LoggerFactory.getLogger(TriangleSevImpl.class);
 	// ~ Instance Fields =====================================
-	/** TODO: Singleton is the best, Build Calculator **/
-	private transient final Calculator<Integer, Integer> calculator = new CatCalculator();
-	/** TODO: Singleton is the best, Build Planum **/
-	private transient final Planum planum = new TrianglePlanum();
+	/** Singleton is the best, Build Calculator **/
+	private transient final Calculator<Integer, Integer> calculator = Instance.singleton(CatCalculator.class);
+	/** Singleton is the best, Build Planum **/
+	private transient final Planum planum = Instance.singleton(TrianglePlanum.class);
 
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================

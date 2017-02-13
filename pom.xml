@@ -10,6 +10,7 @@
 	<modules>
 		<module>code-puzzle</module>
 		<module>code-shape</module>
+		<module>code-api</module>
 	</modules>
 	<properties>
 		<!-- Default Encoding -->
@@ -43,12 +44,18 @@
 		<!-- http://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
 		<oval.groovy>2.4.8</oval.groovy>
 
+		<!-- ========== Jodd Tool ========================== -->
+		<jodd.version>3.8</jodd.version>
+
 		<!-- ========== Vertx Version ====================== -->
 		<!-- Vertx.x Core -->
 		<!-- http://mvnrepository.com/artifact/io.vertx/vertx-core -->
 		<vertx.version>3.3.3</vertx.version>
 		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<jackson.version>2.8.6</jackson.version>
+		<!-- Netty/Common -->
+		<!-- http://mvnrepository.com/artifact/io.netty/netty-common -->
+		<netty.version>4.1.6.Final</netty.version>
 
 		<!-- ========== SLF4j Version ====================== -->
 		<!-- SLF4j Api -->
@@ -105,7 +112,7 @@
 		<!-- Jar Plugin -->
 		<!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
 		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
-		
+
 		<!-- Maven Updating -->
 		<maven.mojo.versions>2.3</maven.mojo.versions>
 	</properties>
@@ -138,17 +145,17 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<scope>test</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<scope>test</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<scope>test</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<!-- Logging -->
 		<dependency>
@@ -192,12 +199,96 @@
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
-			<!-- Code Library -->
+			<!-- ( TsCode ) Library -->
 			<dependency>
 				<groupId>org.tscode</groupId>
 				<artifactId>code-puzzle</artifactId>
 				<version>${project.parent.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.tscode</groupId>
+				<artifactId>code-shape</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<!-- Netty -->
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-resolver-dns</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-common</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-codec</artifactId>
+				<version>${netty.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-transport</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-buffer</artifactId>
+				<version>${netty.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-common</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-handler</artifactId>
+				<version>${netty.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-buffer</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-transport</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-codec</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-transport</artifactId>
+				<version>${netty.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-buffer</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-codec-http</artifactId>
+				<version>${netty.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-codec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty-handler</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- =========== Third Part Start ============= -->
 			<!-- Test Library for each modules -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -337,6 +428,52 @@
 					<exclusion>
 						<groupId>io.vertx</groupId>
 						<artifactId>vertx-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- JODD Tool -->
+			<dependency>
+				<groupId>org.jodd</groupId>
+				<artifactId>jodd-core</artifactId>
+				<version>${jodd.version}</version>
+			</dependency>
+			<!-- JODD: Type -->
+			<dependency>
+				<groupId>org.jodd</groupId>
+				<artifactId>jodd-bean</artifactId>
+				<version>${jodd.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.jodd</groupId>
+						<artifactId>jodd-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- XML/HTML -->
+			<dependency>
+				<groupId>org.jodd</groupId>
+				<artifactId>jodd-lagarto</artifactId>
+				<version>${jodd.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.jodd</groupId>
+						<artifactId>jodd-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- JSON -->
+			<dependency>
+				<groupId>org.jodd</groupId>
+				<artifactId>jodd-json</artifactId>
+				<version>${jodd.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.jodd</groupId>
+						<artifactId>jodd-bean</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.jodd</groupId>
+						<artifactId>jodd-core</artifactId>
 					</exclusion>
 				</exclusions>
 			</dependency>

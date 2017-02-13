@@ -22,10 +22,10 @@ import io.vertx.core.json.JsonObject;
  */
 public class Executor {
 	// ~ Static Fields =======================================
-	/** TODO: Singleton is the best, Build Calculator **/
-	private static final Calculator<Integer, Integer> CALCULATOR = new CatCalculator();
-	/** TODO: Singleton is the best, Build Planum **/
-	private static final Planum PLANUM = new TrianglePlanum();
+	/** Singleton is the best, Build Calculator **/
+	private static final Calculator<Integer, Integer> CALCULATOR = Instance.singleton(CatCalculator.class);
+	/** Singleton is the best, Build Planum **/
+	private static final Planum PLANUM = Instance.singleton(TrianglePlanum.class);
 
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================

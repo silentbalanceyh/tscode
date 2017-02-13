@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tscode.shape.core.Response;
 import org.tscode.util.Executor;
+import org.tscode.util.Instance;
 import org.tscode.util.Log;
 
 import net.sf.oval.constraint.NotBlank;
@@ -30,7 +31,7 @@ public class ServiceTestCase {
 	private static Logger LOGGER = LoggerFactory.getLogger(ServiceTestCase.class);
 	// ~ Instance Fields =====================================
 	/** Singleton is the best **/
-	private transient TriangleService service = new TriangleSevImpl();
+	private transient TriangleService service = Instance.singleton(TriangleSevImpl.class);
 
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
@@ -43,12 +44,14 @@ public class ServiceTestCase {
 		/** **/
 		this.executeTest(Category.EQUILATERAL, "test/triangle/success-equilateral.json");
 	}
+
 	/** **/
 	@Test
 	public void testScalene() {
 		/** **/
 		this.executeTest(Category.SCALENE, "test/triangle/success-scalene.json");
 	}
+
 	/** **/
 	@Test
 	public void testIsosceles() {
