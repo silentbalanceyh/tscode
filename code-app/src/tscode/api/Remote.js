@@ -1,25 +1,12 @@
 import $$ from '../../seed'
+import Immutable from 'immutable'
 import Config from '../config.json'
 import Types from '../core/Types'
 
-const $_filterData = (data = []) => {
-  const filtered = []
-  data.forEach(item => {
-    const dataItem = {}
-    // Title
-    dataItem['title'] = item['applicant']
-    dataItem['position'] = {
-      lat: parseFloat(item['latitude']),
-      lng: parseFloat(item['longitude'])
-    }
-    dataItem['key'] = item[':id']
-    filtered.push(dataItem)
-  })
-  return filtered
-}
-
 const $_fnInit = (props) => {
-  const promise = $$.Ajax.Api.get(Config['api'])
+  let { selected } = props
+  if(!selected) selected = props.$_fnSelected()
+  const promise = $$.Ajax.Api.get(Config['api'],selected)
   const {dispatch} = props
   return promise.then(data => {
     if (0 < data.length) {
@@ -28,6 +15,13 @@ const $_fnInit = (props) => {
   })
 }
 
+const $_fnIsUpdate = (props, nextProps) => {
+  const oldSel = Immutable.fromJS(props.selected)
+  const newSel = Immutable.fromJS(nextProps.selected)
+  return !Immutable.is(oldSel,newSel)
+}
+
 export default {
-  $_fnInit
+  $_fnInit,
+  $_fnIsUpdate
 }

@@ -29,13 +29,39 @@ const fnData = (state, {
     // Markers
     const markers = buildMarker(data)
     // Refresh Data
-    const initMarker = [Future.$_fnLocate()]
-    const refreshed = initMarker.concat(markers)
+    const oldMarker = $state.get('markers')
+    let initMarkers;
+    if(!oldMarker){
+      initMarkers = [Future.$_fnLocate()]
+    }else{
+      initMarkers = [oldMarker.toJS()[0]]
+    }
+    const refreshed = initMarkers.concat(markers)
     $state = $state.set('markers', refreshed)
     return $state.toJS();
   }
 }
 
+const fnSelected = (state, {
+  selected = {}
+}) => {
+  if(selected){
+    let $state = Immutable.fromJS(state)
+    $state = $state.set('selected',selected)
+    // Refresh Markers
+    let markers = $state.get('markers')
+    if(markers){
+      markers = markers.toJS()
+      if(0 < markers.length) markers[0] = Future.$_fnLocate(selected)
+      $state = $state.set('markers',markers)
+    }
+    return $state.toJS()
+  }else{
+    return state
+  }
+}
+
 export default{
-  SUCCESS_DATA: fnData
+  SUCCESS_DATA: fnData,
+  SUCCESS_SELECTED: fnSelected
 }
