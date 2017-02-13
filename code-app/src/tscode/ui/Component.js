@@ -33,12 +33,16 @@ class Component extends React.Component {
 
   render() {
     const {markers = [], data = []} = this.props
-    const { $_fnStatus } = this.props
+    const {$_fnStatus,$_fnType} = this.props
+    // Status
     const reports = $_fnStatus(data)
     const rptKeys = Object.keys(reports)
+    // Types
+    const types = $_fnType(data)
+    const tpKeys = Object.keys(types)
     const {$_fnMapClick} = this.props
     return (
-      <main className="ui basic segment two column grid">
+      <main className="ui segment two column grid">
         <div className="row">
           <div className={`column ${css['left']}`}>
             <div className="ui header">Status</div>
@@ -48,6 +52,17 @@ class Component extends React.Component {
                   const count = reports[key].length
                   return (
                     <div className="item" key={`status${key}`}>{key} - {count}</div>
+                  )
+                })
+              }
+            </div>
+            <div className="ui header">Types</div>
+            <div className="ui list">
+              {
+                tpKeys.map((key) => {
+                  const count = types[key].length
+                  return (
+                    <div className="item" key={`type${key}`}>{key} - {count}</div>
                   )
                 })
               }
