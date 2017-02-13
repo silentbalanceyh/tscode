@@ -5,36 +5,29 @@ import {
   Marker
 } from 'react-google-maps'
 
-import Event from './Api/Event'
-import Future from './Api/Future'
-import Remote from './Api/Remote'
-import mapping from '../spirit/_internal/Redux'
-
 const DefinedMap = withGoogleMap(props => (
   <GoogleMap
-    ref={props.onMapLoad}
     defaultZoom={14}
-    defaultCenter={Future.$_fnLocation()}
-    onClick={props.onMapClick}
+    defaultCenter={{lat: 37.7, lng: -122.4}}
   >
     {props.markers.map((marker, index) => (
-      <Marker {...marker}
-        onRightClick={() => props.onMarkerRightClick(index)}
-      />
+      <Marker {...marker}/>
     ))}
   </GoogleMap>
 ));
 class Component extends React.Component {
 
-  constructor(props){
-    super(props)
-    this.state = Future.$_fnState();
+  componentWillMount() {
+    const {$_fnInit} = this.props
+    console.assert($_fnInit)
+    if ($_fnInit) {
+      $_fnInit(this.props)
+    }
   }
-  componentWillMount(){
-    Remote.$_fnInit(this)
-  }
+
   render() {
-    const {markers = []} = this.state
+    const {markers = []} = this.props
+    console.info(this.props)
     return (
       <div className="ui container">
         <div className="ui top attached ui segment">
@@ -42,7 +35,6 @@ class Component extends React.Component {
         <div className="ui attached segment" style={{height: `600px`}}>
           <DefinedMap
             markers={markers}
-            onMapClick={Event.onMapClick(this)}
             containerElement={
               <div style={{height: `100%`}}/>
             }
@@ -56,6 +48,4 @@ class Component extends React.Component {
   }
 }
 
-export default mapping.direct(Component,Remote,{
-
-})
+export default Component

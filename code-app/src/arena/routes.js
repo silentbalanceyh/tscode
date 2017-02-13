@@ -1,5 +1,3 @@
-import MOD from './modules/module'
-
 export default (store) => ({
   // TODO：Module：修改路由地址，路由中不包含Context
   path: `:app/:module/:page`,

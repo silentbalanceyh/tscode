@@ -1,5 +1,6 @@
 import $$ from '../../seed'
 import Config from '../config.json'
+import Types from '../core/Types'
 
 const $_filterData = (data = []) => {
   const filtered = []
@@ -17,25 +18,12 @@ const $_filterData = (data = []) => {
   return filtered
 }
 
-const $_refreshMarkers = (component, data = []) => {
-  // Extract old markers
-  const {markers = []} = component.state
-  // Selected
-  const selected = 0 < markers.length ? markers[0] : null
-  // Error for Old
-  if (selected) {
-    const target = [selected].concat($_filterData(data))
-    component.setState({
-      markers: target
-    })
-  }
-}
-
-const $_fnInit = (component) => {
+const $_fnInit = (props) => {
   const promise = $$.Ajax.Api.get(Config['api'])
-  promise.then(data => {
+  const {dispatch} = props
+  return promise.then(data => {
     if (0 < data.length) {
-      $_refreshMarkers(component, data)
+      dispatch({type: Types.SUCCESS_DATA, data})
     }
   })
 }
