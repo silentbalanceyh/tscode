@@ -21,4 +21,8 @@ public interface FilePath {
 	 * Vertx Options file.
 	 */
 	String OPT_VERTX = "file.vertx.opts";
+	/**
+	 * Server Options
+	 */
+	String OPT_SERVER = "file.server.opts";
 }
