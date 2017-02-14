@@ -1,9 +1,7 @@
 package org.tscode.vtc;
 
-import java.util.Properties;
-
+import org.tscode.config.Inceptor;
 import org.tscode.cv.FilePath;
-import org.tscode.util.ConfigLoader;
 import org.tscode.util.RouteUtil;
 
 import io.vertx.core.AbstractVerticle;
@@ -21,7 +19,7 @@ import net.sf.oval.guard.Guarded;
 public class RouterAgent extends AbstractVerticle {
 	// ~ Static Fields =======================================
 	/** **/
-	private static final Properties LOADER = ConfigLoader.get(FilePath.OPT_SERVER);
+	private static final Inceptor LOADER = Inceptor.get(FilePath.OPT_SERVER);
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================
 	// ~ Static Methods ======================================
@@ -33,7 +31,8 @@ public class RouterAgent extends AbstractVerticle {
 	public void start() {
 		/** Default Options **/
 		final HttpServerOptions opts = new HttpServerOptions();
-		opts.setHost(LOADER.getProperty("server.host"));
+		opts.setHost(LOADER.getString("server.host"));
+		opts.setPort(LOADER.getInt("server.port"));
 		final HttpServer server = vertx.createHttpServer(opts);
 		/** Set Router **/
 		final Router router = Router.router(vertx);
@@ -45,7 +44,7 @@ public class RouterAgent extends AbstractVerticle {
 			RouteUtil.registerTrucks(router);
 		}
 		/** **/
-		server.requestHandler(router::accept).listen(8083);
+		server.requestHandler(router::accept).listen();
 		System.out.println("Successful to deploy!");
 	}
 	// ~ Methods =============================================

@@ -59,7 +59,7 @@ public interface Inceptor {
 	 * @param key
 	 * @return
 	 */
-	static ConfigInceptor get(final String key){
+	static Inceptor get(final String key){
 		return new ConfigInceptor(key);
 	}
 }
