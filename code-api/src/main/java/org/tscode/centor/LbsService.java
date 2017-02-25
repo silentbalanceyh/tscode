@@ -12,4 +12,8 @@ public interface LbsService {
 	JsonObject queryLocal(JsonObject params);
 	/** **/
 	JsonObject queryRemote(JsonObject params);
+	/** **/
+	JsonObject increase(JsonObject params);
+	/** **/
+	JsonObject getAll();
 }

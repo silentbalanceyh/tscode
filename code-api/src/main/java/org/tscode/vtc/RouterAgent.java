@@ -40,8 +40,13 @@ public class RouterAgent extends AbstractVerticle {
 		{
 			/** 1.Cross Domain **/
 			RouteUtil.registerCors(router);
+			RouteUtil.registerBody(router);
 			/** 2.Common Api **/
 			RouteUtil.registerTrucks(router);
+
+			RouteUtil.registerIncrease(router);
+			
+			RouteUtil.registerLinks(router);
 		}
 		/** **/
 		server.requestHandler(router::accept).listen();

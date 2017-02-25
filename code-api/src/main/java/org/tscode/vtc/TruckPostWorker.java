@@ -13,7 +13,7 @@ import io.vertx.core.json.JsonObject;
  * @author Lang
  *
  */
-public class TruckWorker extends AbstractVerticle {
+public class TruckPostWorker extends AbstractVerticle {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
 	/** **/
@@ -28,7 +28,7 @@ public class TruckWorker extends AbstractVerticle {
 	@Override
 	public void start() {
 		final EventBus bus = vertx.eventBus();
-		bus.<JsonObject>consumer("MSG://QUEUE/LINKS", handler -> {
+		bus.<JsonObject>consumer("MSG://QUEUE/INCRE", handler -> {
 			final JsonObject params = handler.body();
 			final String key = params.getString("KEY");
 			JsonObject response = null;

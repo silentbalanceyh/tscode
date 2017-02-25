@@ -9,13 +9,7 @@ import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-/**
- * Vertx Fixed Handler
- * 
- * @author Lang
- *
- */
-public class RequestHandler implements Handler<RoutingContext> {
+public class LinkHandler implements Handler<RoutingContext> {
 	// ~ Static Fields =======================================
 	// ~ Instance Fields =====================================
 	// ~ Static Block ========================================
@@ -30,7 +24,7 @@ public class RequestHandler implements Handler<RoutingContext> {
 		final EventBus bus = vertx.eventBus();
 		final JsonObject params = extractParams(event);
 		/** **/
-		params.put("KEY","GET");
+		params.put("KEY","UPDATE");
 		bus.<JsonObject>send("MSG://QUEUE/LINKS", params, handler -> {
 			/** **/
 			final HttpServerResponse response = event.response();
@@ -53,22 +47,6 @@ public class RequestHandler implements Handler<RoutingContext> {
 	// ~ Methods =============================================
 	// ~ Private Methods =====================================
 	private JsonObject extractParams(final RoutingContext event){
-		final HttpServerRequest request = event.request();
-		final JsonObject params = new JsonObject();
-		params.put("counter",request.getParam("counter"));
-		params.put("id",request.getParam("id"));
-		return params;
+		return new JsonObject(event.getBodyAsString());
 	}
-//	private JsonObject extractParams(final RoutingContext event){
-//		/** Get Parameters **/
-//		final HttpServerRequest request = event.request();
-//		final JsonObject params = new JsonObject();
-//		params.put("longitude",Double.parseDouble(request.getParam("lng")));
-//		params.put("latitude",Double.parseDouble(request.getParam("lat")));
-//		// Convert KM to m
-//		params.put("distance", Double.parseDouble(request.getParam("distance")) * 1000);
-//		return params;
-//	}
-	// ~ Get/Set =============================================
-	// ~ hashCode,equals,toString ============================
 }

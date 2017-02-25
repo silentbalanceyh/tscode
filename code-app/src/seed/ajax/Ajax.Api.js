@@ -25,14 +25,14 @@ const repdor = (defer, {uri, method}) => {
       }
       defer.reject(error);
     } else {
-      const data = res.body.data
+      const data = res.body.DATA
       /**
       const cacheKey = Sign.cacheKey(uri, method)
       if (cacheKey && "get" == method) {
         Logger.Input.cache(uri, method, cacheKey, data, 'Write')
         Secure.Storage.writeData(cacheKey, data)
       }**/
-      defer.resolve(res.body.data);
+      defer.resolve(res.body.DATA);
     }
   }
 }

@@ -4,7 +4,7 @@
 export const createRoutes = (store) => ({
   getChildRoutes(location, cb){
     require.ensure([], (require) => {
-      const route = require('../../tscode/routes').default(store)
+      const route = require('../../test/routes').default(store)
       cb(null, [
         //require('../../post/app/console/routes').default(store),
         //require('../../post/app/redux/routes').default(store),
